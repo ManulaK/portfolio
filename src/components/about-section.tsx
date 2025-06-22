@@ -62,13 +62,14 @@ export function AboutSection() {
 					>
 						<h3 className="text-3xl font-bold text-gray-900 dark:text-white">Crafting Digital Excellence</h3>
 						<p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-							I'm a dedicated software engineer with over 5 years of experience in building scalable web applications and digital
-							solutions. My passion lies in creating intuitive, performant, and accessible software that makes a real impact.
+							I&apos;m a dedicated software engineer with over 5 years of experience in building scalable web applications and
+							digital solutions. My passion lies in creating intuitive, performant, and accessible software that makes a real
+							impact.
 						</p>
 						<p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
 							Specializing in modern JavaScript frameworks, cloud architecture, and user experience design, I bring ideas to life
-							through clean code and innovative solutions. When I'm not coding, you'll find me exploring new technologies,
-							contributing to open-source projects, or sharing knowledge with the developer community.
+							through clean code and innovative solutions. When I&apos;m not coding, you&apos;ll find me exploring new
+							technologies, contributing to open-source projects, or sharing knowledge with the developer community.
 						</p>
 
 						<div className="flex flex-wrap gap-4 pt-4">

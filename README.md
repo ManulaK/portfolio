@@ -1,6 +1,6 @@
-# 🚀 Manula Kavinda - Modern Portfolio Website
+# 🚀 Manula Kavinda -  Portfolio
 
-A stunning, Apple-inspired portfolio website built with Next.js 14, TypeScript, and Tailwind CSS. Features smooth animations, responsive design, and modern UI/UX principles.
+A stunning, portfolio website built with Next.js 14, TypeScript, and Tailwind CSS. Features smooth animations, responsive design, and modern UI/UX principles.
 
 ![Portfolio Preview](https://via.placeholder.com/800x400/3b82f6/ffffff?text=Portfolio+Preview)
 
@@ -8,7 +8,7 @@ A stunning, Apple-inspired portfolio website built with Next.js 14, TypeScript, 
 
 ### 🎨 **Modern Design**
 
--    **Apple-inspired aesthetics** with clean, minimalist design
+-    **Aesthetics** with clean, minimalist design
 -    **Glass morphism effects** and backdrop blur
 -    **Smooth animations** powered by Framer Motion
 -    **Dark/Light mode** support with automatic theme switching

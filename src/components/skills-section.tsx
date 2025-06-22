@@ -207,7 +207,7 @@ export function SkillsSection() {
 						<CardContent className="p-8">
 							<h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Currently Learning</h3>
 							<p className="text-gray-600 dark:text-gray-300 mb-6">
-								I'm always expanding my skill set to stay current with the latest technologies and best practices.
+								I&apos;m always expanding my skill set to stay current with the latest technologies and best practices.
 							</p>
 							<div className="flex flex-wrap justify-center gap-4">
 								{['Rust', 'WebAssembly', 'Machine Learning', 'Blockchain', 'Three.js', 'Svelte'].map((skill, index) => (
