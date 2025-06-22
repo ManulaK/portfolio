@@ -75,7 +75,7 @@ const researchAccent = 'bg-gradient-to-b from-blue-500 via-purple-500 to-pink-50
 
 export function EducationSection() {
 	return (
-		<AnimatedSection id="education" className="py-20 bg-white dark:bg-gray-950">
+		<AnimatedSection id="education" className="py-20 bg-white dark:bg-gray-950 scroll-mt-20">
 			<div className="max-w-7xl mx-auto px-2 sm:px-8 lg:px-12">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}

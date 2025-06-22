@@ -14,7 +14,7 @@ const stats = [
 
 export function AboutSection() {
 	return (
-		<AnimatedSection id="about" className="py-20 bg-white dark:bg-gray-950">
+		<AnimatedSection id="about" className="py-20 bg-white dark:bg-gray-950 scroll-mt-20">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}

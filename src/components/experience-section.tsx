@@ -33,7 +33,7 @@ const experiences = [
 
 export function ExperienceSection() {
 	return (
-		<AnimatedSection id="experience" className="py-20 bg-gray-50 dark:bg-gray-900">
+		<AnimatedSection id="experience" className="py-20 bg-gray-50 dark:bg-gray-900 scroll-mt-20">
 			<div className="max-w-6xl mx-auto px-2 sm:px-8 lg:px-12">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
