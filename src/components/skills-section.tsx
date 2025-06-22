@@ -5,7 +5,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import {
 	SiJavascript,
 	SiTypescript,
-	SiKotlin,
 	SiPython,
 	SiMysql,
 	SiPostgresql,
@@ -27,11 +26,8 @@ import {
 	SiSocketdotio,
 	SiGit,
 	SiGithub,
-	SiRedux,
-	SiTailwindcss,
 } from 'react-icons/si';
 import { FaDatabase, FaProjectDiagram, FaCogs, FaBrain, FaRobot } from 'react-icons/fa';
-import { TbBrandVscode } from 'react-icons/tb';
 
 const skillGroups = [
 	{

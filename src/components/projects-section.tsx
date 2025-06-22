@@ -1,9 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { ExternalLink, Github, Eye } from 'lucide-react';
 
 const projects = [
 	{

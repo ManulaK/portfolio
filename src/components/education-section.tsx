@@ -69,26 +69,6 @@ const education = [
 	},
 ];
 
-const research = [
-	{
-		title: 'Enhancing Environmental Awareness for Hard of Hearing Individuals: A Mobile Application Approach',
-		institution: 'Sri Lanka Institute of Information Technology',
-		year: '2024',
-		description:
-			'Developed a mobile application to improve environmental awareness for hard of hearing individuals, leveraging real-time data and accessibility-focused design.',
-		publication:
-			'Accepted for publication in Springer Nature as part of the proceedings of the 10th International Congress on Information and Communication Technology (ICICT 2025), London, UK.',
-	},
-	{
-		title: 'Management Optimization Solution for Fashion Retails System',
-		institution: 'Sri Lanka Institute of Information Technology',
-		year: '2023',
-		description:
-			'Focused on optimizing inventory and order management for fashion retail businesses using data-driven decision-making approaches.',
-		publication: 'Published in: Tuijin Jishu / Journal of Propulsion Technology (ISSN: 1001-4055, Vol. 44, No. 6, 2023)',
-	},
-];
-
 // Modern accent color for research cards
 const researchAccent = 'bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500';
 
