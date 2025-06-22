@@ -1,10 +1,23 @@
+import { HeroSection } from '@/components/hero-section';
+import { Navigation } from '@/components/navigation';
+import { AboutSection } from '@/components/about-section';
+import { ExperienceSection } from '@/components/experience-section';
+import { ProjectsSection } from '@/components/projects-section';
+import { SkillsSection } from '@/components/skills-section';
+import { ContactSection } from '@/components/contact-section';
+import { Footer } from '@/components/footer';
+
 export default function Home() {
 	return (
-		<div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
-			<div className="text-center">
-				<h1 className="text-6xl font-bold text-gray-900 dark:text-white mb-4">Manula Kavinda</h1>
-				<p className="text-xl text-gray-600 dark:text-gray-300">Welcome to my portfolio</p>
-			</div>
-		</div>
+		<main className="min-h-screen">
+			<Navigation />
+			<HeroSection />
+			<AboutSection />
+			<ExperienceSection />
+			<ProjectsSection />
+			<SkillsSection />
+			<ContactSection />
+			<Footer />
+		</main>
 	);
 }
