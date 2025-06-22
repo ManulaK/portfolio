@@ -2,10 +2,11 @@ import { motion, type MotionProps } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import React from 'react';
 
-interface AnimatedSectionProps extends React.HTMLAttributes<HTMLDivElement>, MotionProps {
-	children: React.ReactNode;
-	className?: string;
-}
+type AnimatedSectionProps = React.HTMLAttributes<HTMLDivElement> &
+	MotionProps & {
+		children: React.ReactNode;
+		className?: string;
+	};
 
 export function AnimatedSection({ children, className, ...motionProps }: AnimatedSectionProps) {
 	return (
