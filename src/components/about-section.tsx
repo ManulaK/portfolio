@@ -6,7 +6,7 @@ import { Code, Globe, Zap, Users } from 'lucide-react';
 import { AnimatedSection } from '@/components/ui/animated-section';
 
 const stats = [
-	{ icon: Code, label: 'Projects Completed', value: '50+' },
+	{ icon: Code, label: 'Projects', value: '50+' },
 	{ icon: Globe, label: 'Years Experience', value: '2+' },
 	{ icon: Zap, label: 'Technologies', value: '20+' },
 	{ icon: Users, label: 'Happy Clients', value: '30+' },
@@ -35,7 +35,7 @@ export function AboutSection() {
 						<motion.div whileHover={{ scale: 1.03, rotate: -1 }} transition={{ type: 'spring', stiffness: 300 }}>
 							<Card className="max-w-4xl text-left">
 								<CardContent>
-									<h3 className="text-2xl font-bold mb-2">Professional Summary</h3>
+									<h3 className="text-2xl font-bold mb-2 pt-4 pb-2 sm:pt-0 sm:pb-0">Professional Summary</h3>
 									<p className="text-lg mb-2">
 										Versatile Software Engineer with nearly 2 years of progressive experience as an intern, trainee, and
 										associate. Proficiency in mobile and full-stack application development, producing reliable software

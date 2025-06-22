@@ -13,7 +13,7 @@ export function ContactSection() {
 	const formRef = useRef<HTMLFormElement>(null);
 
 	return (
-		<AnimatedSection id="contact" className="py-20 bg-white dark:bg-gray-950 scroll-mt-20">
+		<AnimatedSection id="contact" className="py-20 bg-white scroll-mt-20">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
@@ -26,11 +26,11 @@ export function ContactSection() {
 						initial={{ opacity: 0, scale: 0.8 }}
 						whileInView={{ opacity: 1, scale: 1 }}
 						transition={{ duration: 0.7 }}
-						className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6"
+						className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6"
 					>
 						Get In Touch
 					</motion.h2>
-					<p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+					<p className="text-xl text-gray-600 max-w-3xl mx-auto">
 						I&apos;m always open to discussing new opportunities, interesting projects, or just having a chat about technology and
 						innovation.
 					</p>
@@ -47,8 +47,8 @@ export function ContactSection() {
 						whileHover={{ scale: 1.02, rotate: -1 }}
 					>
 						<div>
-							<h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Let&apos;s Connect</h3>
-							<p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+							<h3 className="text-2xl font-bold text-gray-900 mb-6">Let&apos;s Connect</h3>
+							<p className="text-lg text-gray-600 leading-relaxed mb-8">
 								Whether you have a project in mind, want to discuss potential opportunities, or just want to say hello,
 								I&apos;d love to hear from you. Feel free to reach out through any of the channels below.
 							</p>
@@ -60,8 +60,8 @@ export function ContactSection() {
 									<Mail className="w-6 h-6 text-white" />
 								</div>
 								<div>
-									<h4 className="font-semibold text-gray-900 dark:text-white">Email</h4>
-									<p className="text-gray-600 dark:text-gray-300">manulakavinda.dev@gmail.com</p>
+									<h4 className="font-semibold text-gray-900">Email</h4>
+									<p className="text-gray-600">manulakavinda.dev@gmail.com</p>
 								</div>
 							</div>
 
@@ -70,8 +70,8 @@ export function ContactSection() {
 									<Phone className="w-6 h-6 text-white" />
 								</div>
 								<div>
-									<h4 className="font-semibold text-gray-900 dark:text-white">Phone</h4>
-									<p className="text-gray-600 dark:text-gray-300">+94-71-999-1761</p>
+									<h4 className="font-semibold text-gray-900">Phone</h4>
+									<p className="text-gray-600">+94-71-999-1761</p>
 								</div>
 							</div>
 
@@ -80,28 +80,28 @@ export function ContactSection() {
 									<MapPin className="w-6 h-6 text-white" />
 								</div>
 								<div>
-									<h4 className="font-semibold text-gray-900 dark:text-white">Location</h4>
-									<p className="text-gray-600 dark:text-gray-300">Minuwangoda, Western Province, Sri Lanka</p>
+									<h4 className="font-semibold text-gray-900">Location</h4>
+									<p className="text-gray-600">Minuwangoda, Western Province, Sri Lanka</p>
 								</div>
 							</div>
 						</div>
 
 						{/* Social Links */}
 						<div>
-							<h4 className="font-semibold text-gray-900 dark:text-white mb-4">Follow Me</h4>
+							<h4 className="font-semibold text-gray-900 mb-4">Follow Me</h4>
 							<div className="flex gap-4">
 								{[
 									{
 										href: 'https://github.com/ManulaK',
-										icon: <LuGithub className="w-6 h-6 text-gray-700 dark:text-gray-300" />,
+										icon: <LuGithub className="w-6 h-6 text-gray-700" />,
 									},
 									{
 										href: 'https://www.linkedin.com/in/manulakavinda/',
-										icon: <LuLinkedin className="w-6 h-6 text-blue-700 dark:text-blue-400" />,
+										icon: <LuLinkedin className="w-6 h-6 text-blue-700" />,
 									},
 									{
 										href: 'https://www.instagram.com/manuu.k_____/',
-										icon: <LuInstagram className="w-6 h-6 text-pink-600 dark:text-pink-400" />,
+										icon: <LuInstagram className="w-6 h-6 text-pink-600" />,
 									},
 								].map((item, i) => (
 									<motion.a
@@ -113,7 +113,7 @@ export function ContactSection() {
 										animate={{ opacity: 1, scale: 1 }}
 										transition={{ delay: 0.5 + i * 0.15, duration: 0.5, type: 'spring' }}
 										whileHover={{ scale: 1.2, rotate: 6 }}
-										className="p-3 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 hover:scale-110 shadow-md"
+										className="p-3 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 hover:bg-white transition-all duration-300 hover:scale-110 shadow-md"
 									>
 										{item.icon}
 									</motion.a>
@@ -131,7 +131,7 @@ export function ContactSection() {
 					>
 						<Card className="p-8">
 							<CardContent className="p-0">
-								<h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Send a Message</h3>
+								<h3 className="text-2xl font-bold text-gray-900 mb-6">Send a Message</h3>
 
 								<form
 									action="https://formspree.io/f/xkgbvdap"
@@ -160,10 +160,7 @@ export function ContactSection() {
 								>
 									<div className="grid md:grid-cols-2 gap-6">
 										<div>
-											<label
-												htmlFor="firstName"
-												className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
-											>
+											<label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
 												First Name
 											</label>
 											<input
@@ -171,15 +168,12 @@ export function ContactSection() {
 												id="firstName"
 												name="firstName"
 												required
-												className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+												className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
 												placeholder="John"
 											/>
 										</div>
 										<div>
-											<label
-												htmlFor="lastName"
-												className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
-											>
+											<label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
 												Last Name
 											</label>
 											<input
@@ -187,13 +181,13 @@ export function ContactSection() {
 												id="lastName"
 												name="lastName"
 												required
-												className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+												className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
 												placeholder="Doe"
 											/>
 										</div>
 									</div>
 									<div>
-										<label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+										<label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
 											Email
 										</label>
 										<input
@@ -201,15 +195,12 @@ export function ContactSection() {
 											id="email"
 											name="email"
 											required
-											className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+											className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
 											placeholder="manulakavinda.dev@gmail.com"
 										/>
 									</div>
 									<div>
-										<label
-											htmlFor="message"
-											className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
-										>
+										<label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
 											Message
 										</label>
 										<textarea
@@ -217,7 +208,7 @@ export function ContactSection() {
 											name="message"
 											rows={4}
 											required
-											className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+											className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
 											placeholder="Type your message..."
 										/>
 									</div>
@@ -226,14 +217,10 @@ export function ContactSection() {
 										Send Message
 									</Button>
 									{status === 'success' && (
-										<p className="text-green-600 dark:text-green-400 mt-4 text-center">
-											Thank you! Your message has been sent.
-										</p>
+										<p className="text-green-600 mt-4 text-center">Thank you! Your message has been sent.</p>
 									)}
 									{status === 'error' && (
-										<p className="text-red-600 dark:text-red-400 mt-4 text-center">
-											Oops! Something went wrong. Please try again.
-										</p>
+										<p className="text-red-600 mt-4 text-center">Oops! Something went wrong. Please try again.</p>
 									)}
 								</form>
 							</CardContent>
@@ -249,13 +236,13 @@ export function ContactSection() {
 					viewport={{ once: true }}
 					className="mt-16 text-center"
 				>
-					<Card className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 border-0">
+					<Card className="bg-gradient-to-r from-green-50 to-blue-50 border-0">
 						<CardContent className="p-8">
 							<div className="flex items-center justify-center gap-3 mb-4">
 								<div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-								<span className="text-lg font-semibold text-gray-900 dark:text-white">Available for New Opportunities</span>
+								<span className="text-lg font-semibold text-gray-900">Available for New Opportunities</span>
 							</div>
-							<p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+							<p className="text-gray-600 max-w-2xl mx-auto">
 								I&apos;m currently accepting new projects and opportunities. Whether it&apos;s a full-time position, freelance
 								work, or collaboration on an exciting project, I&apos;d love to hear from you.
 							</p>
