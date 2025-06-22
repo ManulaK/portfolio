@@ -6,7 +6,7 @@ import { Code, Globe, Zap, Users } from 'lucide-react';
 
 const stats = [
 	{ icon: Code, label: 'Projects Completed', value: '50+' },
-	{ icon: Globe, label: 'Years Experience', value: '5+' },
+	{ icon: Globe, label: 'Years Experience', value: '2+' },
 	{ icon: Zap, label: 'Technologies', value: '20+' },
 	{ icon: Users, label: 'Happy Clients', value: '30+' },
 ];
@@ -23,6 +23,34 @@ export function AboutSection() {
 					className="text-center mb-16"
 				>
 					<h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">About Me</h2>
+					<div className="flex justify-center mb-8">
+						<div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl shadow-lg p-6 max-w-2xl text-left border border-blue-100 dark:border-blue-900">
+							<h3 className="text-2xl font-bold mb-2 text-blue-900 dark:text-blue-200">Professional Summary</h3>
+							<p className="text-lg text-gray-700 dark:text-gray-200 mb-2">
+								Versatile Software Engineer with nearly 2 years of progressive experience as an intern, trainee, and
+								associate. Proficiency in mobile and full-stack application development, producing reliable software solutions
+								that prioritize user expectations. Demonstrates skills in JavaScript, Java, Python, and various technologies,
+								including ReactJS, NodeJS, Flutter, and Android. Effectively applies agile methodologies and DevOps practices.
+								Proven ability to troubleshoot and resolve software defects, ensuring smooth operations. Adept at continuous
+								learning and staying updated on best practices in software development. Seeking to use technical experience
+								and innovative problem-solving abilities to drive successful projects in a collaborative environment.
+							</p>
+							<div className="flex flex-wrap gap-2 mt-2">
+								<span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 rounded-full text-xs font-medium">
+									2 Years Experience
+								</span>
+								<span className="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 rounded-full text-xs font-medium">
+									Full-Stack & Mobile
+								</span>
+								<span className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200 rounded-full text-xs font-medium">
+									Agile & DevOps
+								</span>
+								<span className="px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200 rounded-full text-xs font-medium">
+									Continuous Learner
+								</span>
+							</div>
+						</div>
+					</div>
 					<p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
 						Passionate software engineer with expertise in modern web technologies and a drive for creating exceptional user
 						experiences.

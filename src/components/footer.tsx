@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Twitter, Mail, Heart } from 'lucide-react';
+import { Github, Linkedin, Instagram, Mail, Heart } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export function Footer() {
@@ -32,22 +32,28 @@ export function Footer() {
 						</p>
 						<div className="flex gap-4">
 							<a
-								href="#"
+								href="https://github.com/ManulaK"
 								className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-300"
+								target="_blank"
+								rel="noopener noreferrer"
 							>
 								<Github className="w-5 h-5" />
 							</a>
 							<a
-								href="#"
+								href="https://www.linkedin.com/in/manulakavinda/"
 								className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-300"
+								target="_blank"
+								rel="noopener noreferrer"
 							>
 								<Linkedin className="w-5 h-5" />
 							</a>
 							<a
-								href="#"
-								className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-300"
+								href="https://www.instagram.com/manuu.k_____/"
+								className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-pink-600 transition-colors duration-300"
+								target="_blank"
+								rel="noopener noreferrer"
 							>
-								<Twitter className="w-5 h-5" />
+								<Instagram className="w-5 h-5" />
 							</a>
 							<a
 								href="#"

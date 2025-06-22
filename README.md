@@ -1,4 +1,4 @@
-# 🚀 Manula Kavinda -  Portfolio
+# 🚀 Manula Kavinda - Portfolio
 
 A stunning, portfolio website built with Next.js 14, TypeScript, and Tailwind CSS. Features smooth animations, responsive design, and modern UI/UX principles.
 

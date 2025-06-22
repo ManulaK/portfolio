@@ -1,50 +1,31 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Building2, Calendar, MapPin } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Briefcase, MapPin, Calendar } from 'lucide-react';
 
 const experiences = [
 	{
-		company: 'TechCorp Solutions',
-		position: 'Senior Software Engineer',
-		duration: '2023 - Present',
-		location: 'San Francisco, CA',
-		description:
-			'Leading development of scalable web applications using React, Node.js, and AWS. Mentoring junior developers and implementing best practices for code quality and performance.',
-		technologies: ['React', 'Node.js', 'AWS', 'TypeScript', 'Docker'],
+		title: 'Associate Software Engineer',
+		company: 'Orel Corporation (Pvt) Ltd',
+		location: 'Orel Park, Meegoda, Sri Lanka',
+		duration: 'September 2023 - June 2025',
 		achievements: [
-			'Reduced application load time by 40% through optimization',
-			'Led a team of 5 developers on major product features',
-			'Implemented CI/CD pipeline reducing deployment time by 60%',
+			'Led and collaborated on over 5-6 internal and external projects, focusing on front-end and mobile development, contributing to the achievement of company goals, and enhancing employee satisfaction.',
+			'Continuously learned and successfully adopted emerging technologies, improving software performance and stability.',
+			'Planned, designed, implemented, and tested software modules in collaboration with senior engineers, ensuring seamless integration and functionality across the organization.',
+			'Adhered to best practices in software development and project management, delivering high-quality enterprise modules.',
 		],
 	},
 	{
-		company: 'InnovateTech',
-		position: 'Full Stack Developer',
-		duration: '2021 - 2023',
-		location: 'New York, NY',
-		description:
-			'Developed and maintained multiple client-facing applications. Collaborated with cross-functional teams to deliver high-quality software solutions.',
-		technologies: ['JavaScript', 'Python', 'PostgreSQL', 'Redis', 'Kubernetes'],
+		title: 'Intern Software Engineer',
+		company: 'Axcer Innovations',
+		location: 'Colombo, Sri Lanka',
+		duration: 'March 2023 - September 2023',
 		achievements: [
-			'Built 3 major features that increased user engagement by 25%',
-			'Improved database query performance by 50%',
-			'Received 2 performance awards for exceptional work',
-		],
-	},
-	{
-		company: 'StartupHub',
-		position: 'Frontend Developer',
-		duration: '2020 - 2021',
-		location: 'Austin, TX',
-		description:
-			'Focused on creating responsive and accessible user interfaces. Worked closely with designers to implement pixel-perfect designs.',
-		technologies: ['React', 'Vue.js', 'Sass', 'Webpack', 'Jest'],
-		achievements: [
-			'Developed 10+ reusable component libraries',
-			'Achieved 95% accessibility score across all applications',
-			'Reduced bundle size by 30% through code splitting',
+			'Focused on full-stack development, emphasizing API integration and collaborating on UI design.',
+			'Adhered to software development best practices, including version control, automated testing, and code reviews, enhancing code quality and maintainability.',
+			'Identified and resolved critical bugs, reducing system crashes, and enhanced problem-solving skills and adaptability in a dynamic environment.',
 		],
 	},
 ];
@@ -52,7 +33,7 @@ const experiences = [
 export function ExperienceSection() {
 	return (
 		<section id="experience" className="py-20 bg-gray-50 dark:bg-gray-900">
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div className="max-w-6xl mx-auto px-2 sm:px-8 lg:px-12">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
@@ -60,93 +41,59 @@ export function ExperienceSection() {
 					viewport={{ once: true }}
 					className="text-center mb-16"
 				>
-					<h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">Experience</h2>
+					<h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">Work Experience</h2>
 					<p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-						My professional journey in software engineering, working with amazing teams and building impactful solutions.
+						My professional journey as a software engineer, building impactful solutions and growing with every challenge.
 					</p>
 				</motion.div>
-
-				<div className="space-y-8">
-					{experiences.map((experience, index) => (
+				<div className="relative border-l-2 border-blue-200 dark:border-blue-700 ml-8 sm:ml-16">
+					{experiences.map((exp, idx) => (
 						<motion.div
-							key={experience.company}
-							initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+							key={exp.title}
+							initial={{ opacity: 0, x: 40 }}
 							whileInView={{ opacity: 1, x: 0 }}
-							transition={{ duration: 0.8, delay: index * 0.2 }}
+							transition={{ duration: 0.7, delay: idx * 0.2 }}
 							viewport={{ once: true }}
+							className="mb-16 sm:mb-20 ml-8 sm:ml-12 relative"
 						>
-							<Card className="relative overflow-hidden hover:shadow-xl transition-all duration-300">
-								<div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-600"></div>
-								<CardHeader className="pb-4">
-									<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+							{/* Timeline Dot with animation */}
+							<motion.span
+								className="absolute -left-12 sm:-left-16 top-6 w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg border-4 border-white dark:border-gray-900 z-10"
+								initial={{ scale: 0.8, opacity: 0.7 }}
+								whileInView={{ scale: 1, opacity: 1 }}
+								transition={{ duration: 0.5, delay: idx * 0.2 }}
+							>
+								<Briefcase className="w-5 h-5 text-white" />
+							</motion.span>
+							<Card className="bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-lg transition-all duration-300">
+								<CardContent className="p-6">
+									<div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between mb-2">
 										<div>
-											<CardTitle className="text-2xl text-gray-900 dark:text-white">{experience.position}</CardTitle>
-											<div className="flex items-center gap-4 mt-2 text-gray-600 dark:text-gray-400">
-												<div className="flex items-center gap-1">
-													<Building2 className="w-4 h-4" />
-													<span className="font-medium">{experience.company}</span>
-												</div>
-												<div className="flex items-center gap-1">
-													<Calendar className="w-4 h-4" />
-													<span>{experience.duration}</span>
-												</div>
-												<div className="flex items-center gap-1">
-													<MapPin className="w-4 h-4" />
-													<span>{experience.location}</span>
-												</div>
-											</div>
+											<h3 className="text-2xl font-bold text-blue-900 dark:text-blue-200 leading-tight">
+												{exp.title}
+											</h3>
+											<span className="block text-sm font-medium text-blue-700 dark:text-blue-300 opacity-80 mt-1 sm:mt-0">
+												{exp.company}
+											</span>
 										</div>
-										<div className="flex flex-wrap gap-2">
-											{experience.technologies.map((tech) => (
-												<span
-													key={tech}
-													className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium"
-												>
-													{tech}
-												</span>
-											))}
+										<div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs sm:text-sm mt-2 sm:mt-0">
+											<Calendar className="w-4 h-4" />
+											<span>{exp.duration}</span>
+											<span className="mx-2 hidden sm:inline">|</span>
+											<MapPin className="w-4 h-4" />
+											<span>{exp.location}</span>
 										</div>
 									</div>
-								</CardHeader>
-								<CardContent className="pt-0">
-									<p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">{experience.description}</p>
-									<div className="space-y-2">
-										<h4 className="font-semibold text-gray-900 dark:text-white">Key Achievements:</h4>
-										<ul className="space-y-2">
-											{experience.achievements.map((achievement, achievementIndex) => (
-												<li key={achievementIndex} className="flex items-start gap-2">
-													<div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-													<span className="text-gray-600 dark:text-gray-300">{achievement}</span>
-												</li>
-											))}
-										</ul>
-									</div>
+									<ul className="list-disc pl-5 mt-3 space-y-2 text-gray-700 dark:text-gray-300 text-sm sm:text-base">
+										{exp.achievements.map((ach, i) => (
+											<li key={i}>{ach}</li>
+										))}
+									</ul>
 								</CardContent>
 							</Card>
 						</motion.div>
 					))}
 				</div>
-
-				{/* Download Resume CTA */}
-				<motion.div
-					initial={{ opacity: 0, y: 20 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.8, delay: 0.6 }}
-					viewport={{ once: true }}
-					className="text-center mt-16"
-				>
-					<div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 cursor-pointer">
-						<span className="font-medium">Download Full Resume</span>
-						<svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								strokeWidth={2}
-								d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-							/>
-						</svg>
-					</div>
-				</motion.div>
 			</div>
 		</section>
 	);

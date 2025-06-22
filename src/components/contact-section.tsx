@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Instagram } from 'lucide-react';
 
 export function ContactSection() {
 	return (
@@ -47,7 +47,7 @@ export function ContactSection() {
 								</div>
 								<div>
 									<h4 className="font-semibold text-gray-900 dark:text-white">Email</h4>
-									<p className="text-gray-600 dark:text-gray-300">manula.kavinda@example.com</p>
+									<p className="text-gray-600 dark:text-gray-300">manulakavinda.dev@gmail.com</p>
 								</div>
 							</div>
 
@@ -57,7 +57,7 @@ export function ContactSection() {
 								</div>
 								<div>
 									<h4 className="font-semibold text-gray-900 dark:text-white">Phone</h4>
-									<p className="text-gray-600 dark:text-gray-300">+1 (555) 123-4567</p>
+									<p className="text-gray-600 dark:text-gray-300">+94-71-999-1761</p>
 								</div>
 							</div>
 
@@ -67,7 +67,7 @@ export function ContactSection() {
 								</div>
 								<div>
 									<h4 className="font-semibold text-gray-900 dark:text-white">Location</h4>
-									<p className="text-gray-600 dark:text-gray-300">San Francisco, CA</p>
+									<p className="text-gray-600 dark:text-gray-300">Minuwangoda, Western Province, Sri Lanka</p>
 								</div>
 							</div>
 						</div>
@@ -77,22 +77,28 @@ export function ContactSection() {
 							<h4 className="font-semibold text-gray-900 dark:text-white mb-4">Follow Me</h4>
 							<div className="flex gap-4">
 								<a
-									href="#"
+									href="https://github.com/ManulaK"
 									className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors duration-300"
+									target="_blank"
+									rel="noopener noreferrer"
 								>
 									<Github className="w-6 h-6 text-gray-700 dark:text-gray-300" />
 								</a>
 								<a
-									href="#"
+									href="https://www.linkedin.com/in/manulakavinda/"
 									className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors duration-300"
+									target="_blank"
+									rel="noopener noreferrer"
 								>
-									<Linkedin className="w-6 h-6 text-gray-700 dark:text-gray-300" />
+									<Linkedin className="w-6 h-6 text-blue-700 dark:text-blue-400" />
 								</a>
 								<a
-									href="#"
-									className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors duration-300"
+									href="https://www.instagram.com/manuu.k_____/"
+									className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center hover:bg-pink-100 dark:hover:bg-pink-900/30 transition-colors duration-300"
+									target="_blank"
+									rel="noopener noreferrer"
 								>
-									<Twitter className="w-6 h-6 text-gray-700 dark:text-gray-300" />
+									<Instagram className="w-6 h-6 text-pink-600 dark:text-pink-400" />
 								</a>
 							</div>
 						</div>

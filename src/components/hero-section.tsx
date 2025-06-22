@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Instagram } from 'lucide-react';
 
 export function HeroSection() {
 	return (
@@ -76,22 +76,28 @@ export function HeroSection() {
 						className="flex justify-center space-x-6 pt-8"
 					>
 						<a
-							href="#"
+							href="https://github.com/ManulaK"
 							className="p-3 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 hover:scale-110"
+							target="_blank"
+							rel="noopener noreferrer"
 						>
 							<Github className="w-5 h-5 text-gray-700 dark:text-gray-300" />
 						</a>
 						<a
-							href="#"
+							href="https://www.linkedin.com/in/manulakavinda/"
 							className="p-3 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 hover:scale-110"
+							target="_blank"
+							rel="noopener noreferrer"
 						>
-							<Linkedin className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+							<Linkedin className="w-5 h-5 text-blue-700 dark:text-blue-400" />
 						</a>
 						<a
-							href="#"
-							className="p-3 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 hover:scale-110"
+							href="https://www.instagram.com/manuu.k_____/"
+							className="p-3 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 hover:bg-pink-100 dark:hover:bg-pink-900/30 transition-all duration-300 hover:scale-110"
+							target="_blank"
+							rel="noopener noreferrer"
 						>
-							<Mail className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+							<Instagram className="w-5 h-5 text-pink-600 dark:text-pink-400" />
 						</a>
 					</motion.div>
 				</motion.div>

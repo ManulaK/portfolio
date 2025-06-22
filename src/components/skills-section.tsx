@@ -2,74 +2,109 @@
 
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
-import { Code, Database, Cloud, Palette, Smartphone, Globe } from 'lucide-react';
+import {
+	SiJavascript,
+	SiTypescript,
+	SiKotlin,
+	SiPython,
+	SiMysql,
+	SiPostgresql,
+	SiMongodb,
+	SiFirebase,
+	SiSwift,
+	SiDotnet,
+	SiDart,
+	SiHtml5,
+	SiCss3,
+	SiReact,
+	SiNextdotjs,
+	SiNodedotjs,
+	SiExpress,
+	SiFlutter,
+	SiAndroid,
+	SiFlask,
+	SiGraphql,
+	SiSocketdotio,
+	SiGit,
+	SiGithub,
+	SiRedux,
+	SiTailwindcss,
+} from 'react-icons/si';
+import { FaDatabase, FaProjectDiagram, FaCogs, FaBrain, FaRobot } from 'react-icons/fa';
+import { TbBrandVscode } from 'react-icons/tb';
 
-const skillCategories = [
+const skillGroups = [
 	{
-		title: 'Frontend Development',
-		icon: Code,
+		title: 'Programming Languages',
+		icon: FaBrain,
 		skills: [
-			{ name: 'React', level: 95 },
-			{ name: 'Next.js', level: 90 },
-			{ name: 'TypeScript', level: 88 },
-			{ name: 'Tailwind CSS', level: 92 },
-			{ name: 'Vue.js', level: 85 },
+			{ name: 'JavaScript', icon: SiJavascript },
+			{ name: 'TypeScript', icon: SiTypescript },
+			{ name: 'Python', icon: SiPython },
+			{ name: 'SQL', icon: SiMysql },
+			{ name: 'Swift', icon: SiSwift },
+			{ name: '.NET', icon: SiDotnet },
+			{ name: 'Dart', icon: SiDart },
 		],
 	},
 	{
-		title: 'Backend Development',
-		icon: Database,
+		title: 'Technologies',
+		icon: FaCogs,
 		skills: [
-			{ name: 'Node.js', level: 90 },
-			{ name: 'Python', level: 85 },
-			{ name: 'Express.js', level: 88 },
-			{ name: 'FastAPI', level: 80 },
-			{ name: 'GraphQL', level: 75 },
+			{ name: 'HTML5', icon: SiHtml5 },
+			{ name: 'CSS3', icon: SiCss3 },
+			{ name: 'ReactJS', icon: SiReact },
+			{ name: 'NextJS', icon: SiNextdotjs },
+			{ name: 'NodeJS', icon: SiNodedotjs },
+			{ name: 'Express', icon: SiExpress },
+			{ name: 'Flutter', icon: SiFlutter },
+			{ name: 'Android', icon: SiAndroid },
+			{ name: 'Flask', icon: SiFlask },
+			{ name: 'REST', icon: FaProjectDiagram },
+			{ name: 'GraphQL', icon: SiGraphql },
+			{ name: 'Web Sockets', icon: SiSocketdotio },
 		],
 	},
 	{
-		title: 'Cloud & DevOps',
-		icon: Cloud,
+		title: 'Databases',
+		icon: FaDatabase,
 		skills: [
-			{ name: 'AWS', level: 85 },
-			{ name: 'Docker', level: 80 },
-			{ name: 'Kubernetes', level: 70 },
-			{ name: 'CI/CD', level: 85 },
-			{ name: 'Terraform', level: 75 },
+			{ name: 'MongoDB', icon: SiMongodb },
+			{ name: 'PostgreSQL', icon: SiPostgresql },
+			{ name: 'MySQL', icon: SiMysql },
+			{ name: 'Firebase', icon: SiFirebase },
 		],
 	},
 	{
-		title: 'UI/UX Design',
-		icon: Palette,
+		title: 'Version Control',
+		icon: SiGit,
 		skills: [
-			{ name: 'Figma', level: 85 },
-			{ name: 'Adobe XD', level: 80 },
-			{ name: 'Prototyping', level: 88 },
-			{ name: 'Design Systems', level: 82 },
-			{ name: 'User Research', level: 75 },
+			{ name: 'Git', icon: SiGit },
+			{ name: 'GitHub', icon: SiGithub },
 		],
 	},
 	{
-		title: 'Mobile Development',
-		icon: Smartphone,
+		title: 'DevOps & Project Management',
+		icon: FaProjectDiagram,
 		skills: [
-			{ name: 'React Native', level: 80 },
-			{ name: 'Flutter', level: 70 },
-			{ name: 'iOS Development', level: 75 },
-			{ name: 'Android Development', level: 70 },
-			{ name: 'PWA', level: 85 },
+			{ name: 'DevOps Principles', icon: FaCogs },
+			{ name: 'Project Management', icon: FaProjectDiagram },
+			{ name: 'Agile Methodologies', icon: FaProjectDiagram },
 		],
 	},
 	{
-		title: 'Other Technologies',
-		icon: Globe,
+		title: 'CS Fundamentals',
+		icon: FaBrain,
 		skills: [
-			{ name: 'MongoDB', level: 85 },
-			{ name: 'PostgreSQL', level: 80 },
-			{ name: 'Redis', level: 75 },
-			{ name: 'WebRTC', level: 70 },
-			{ name: 'Socket.io', level: 80 },
+			{ name: 'Data Structures', icon: FaBrain },
+			{ name: 'Algorithms', icon: FaBrain },
+			{ name: 'Design Principles', icon: FaBrain },
 		],
+	},
+	{
+		title: 'AI & LLM Integration',
+		icon: FaRobot,
+		skills: [{ name: 'Integrating LLMs & RAG', icon: FaRobot }],
 	},
 ];
 
@@ -91,47 +126,42 @@ export function SkillsSection() {
 				</motion.div>
 
 				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-					{skillCategories.map((category, categoryIndex) => (
+					{skillGroups.map((group, groupIdx) => (
 						<motion.div
-							key={category.title}
+							key={group.title}
 							initial={{ opacity: 0, y: 50 }}
 							whileInView={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
+							transition={{ duration: 0.8, delay: groupIdx * 0.1 }}
 							viewport={{ once: true }}
 						>
 							<Card className="h-full hover:shadow-xl transition-all duration-300 group">
 								<CardContent className="p-6">
 									<div className="flex items-center gap-3 mb-6">
 										<div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-											<category.icon className="w-6 h-6 text-white" />
+											<group.icon className="w-6 h-6 text-white" />
 										</div>
-										<h3 className="text-xl font-bold text-gray-900 dark:text-white">{category.title}</h3>
+										<h3 className="text-xl font-bold text-gray-900 dark:text-white">{group.title}</h3>
 									</div>
-
-									<div className="space-y-4">
-										{category.skills.map((skill, skillIndex) => (
+									<div className="flex flex-wrap gap-4">
+										{group.skills.map((skill, skillIdx) => (
 											<motion.div
 												key={skill.name}
-												initial={{ opacity: 0, x: -20 }}
-												whileInView={{ opacity: 1, x: 0 }}
-												transition={{ duration: 0.6, delay: skillIndex * 0.1 }}
+												initial={{ opacity: 0, scale: 0.8 }}
+												whileInView={{ opacity: 1, scale: 1 }}
+												transition={{ duration: 0.5, delay: skillIdx * 0.05 }}
 												viewport={{ once: true }}
+												className="flex flex-col items-center gap-1 hover:scale-110 transition-transform duration-300"
 											>
-												<div className="flex justify-between items-center mb-2">
-													<span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-														{skill.name}
+												{skill.icon ? (
+													<skill.icon className="w-8 h-8 mb-1" />
+												) : (
+													<span className="w-8 h-8 mb-1 flex items-center justify-center bg-gray-200 dark:bg-gray-700 rounded-full text-gray-500">
+														?
 													</span>
-													<span className="text-sm text-gray-500 dark:text-gray-400">{skill.level}%</span>
-												</div>
-												<div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-													<motion.div
-														initial={{ width: 0 }}
-														whileInView={{ width: `${skill.level}%` }}
-														transition={{ duration: 1, delay: skillIndex * 0.1 }}
-														viewport={{ once: true }}
-														className="h-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"
-													/>
-												</div>
+												)}
+												<span className="text-xs font-medium text-gray-700 dark:text-gray-300 text-center">
+													{skill.name}
+												</span>
 											</motion.div>
 										))}
 									</div>
