@@ -6,13 +6,14 @@ import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { LuGithub, LuLinkedin, LuInstagram } from 'react-icons/lu';
 import { useState, useRef } from 'react';
+import { AnimatedSection } from '@/components/ui/animated-section';
 
 export function ContactSection() {
 	const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
 	const formRef = useRef<HTMLFormElement>(null);
 
 	return (
-		<section id="contact" className="py-20 bg-white dark:bg-gray-950">
+		<AnimatedSection id="contact" className="py-20 bg-white dark:bg-gray-950">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
@@ -21,7 +22,14 @@ export function ContactSection() {
 					viewport={{ once: true }}
 					className="text-center mb-16"
 				>
-					<h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">Get In Touch</h2>
+					<motion.h2
+						initial={{ opacity: 0, scale: 0.8 }}
+						whileInView={{ opacity: 1, scale: 1 }}
+						transition={{ duration: 0.7 }}
+						className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6"
+					>
+						Get In Touch
+					</motion.h2>
 					<p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
 						I&apos;m always open to discussing new opportunities, interesting projects, or just having a chat about technology and
 						innovation.
@@ -36,6 +44,7 @@ export function ContactSection() {
 						transition={{ duration: 0.8 }}
 						viewport={{ once: true }}
 						className="space-y-8"
+						whileHover={{ scale: 1.02, rotate: -1 }}
 					>
 						<div>
 							<h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Let&apos;s Connect</h3>
@@ -81,30 +90,34 @@ export function ContactSection() {
 						<div>
 							<h4 className="font-semibold text-gray-900 dark:text-white mb-4">Follow Me</h4>
 							<div className="flex gap-4">
-								<a
-									href="https://github.com/ManulaK"
-									className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors duration-300"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<LuGithub className="w-6 h-6 text-gray-700 dark:text-gray-300" />
-								</a>
-								<a
-									href="https://www.linkedin.com/in/manulakavinda/"
-									className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors duration-300"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<LuLinkedin className="w-6 h-6 text-blue-700 dark:text-blue-400" />
-								</a>
-								<a
-									href="https://www.instagram.com/manuu.k_____\/"
-									className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center hover:bg-pink-100 dark:hover:bg-pink-900/30 transition-colors duration-300"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<LuInstagram className="w-6 h-6 text-pink-600 dark:text-pink-400" />
-								</a>
+								{[
+									{
+										href: 'https://github.com/ManulaK',
+										icon: <LuGithub className="w-6 h-6 text-gray-700 dark:text-gray-300" />,
+									},
+									{
+										href: 'https://www.linkedin.com/in/manulakavinda/',
+										icon: <LuLinkedin className="w-6 h-6 text-blue-700 dark:text-blue-400" />,
+									},
+									{
+										href: 'https://www.instagram.com/manuu.k_____/',
+										icon: <LuInstagram className="w-6 h-6 text-pink-600 dark:text-pink-400" />,
+									},
+								].map((item, i) => (
+									<motion.a
+										key={item.href}
+										href={item.href}
+										target="_blank"
+										rel="noopener noreferrer"
+										initial={{ opacity: 0, scale: 0.7 }}
+										animate={{ opacity: 1, scale: 1 }}
+										transition={{ delay: 0.5 + i * 0.15, duration: 0.5, type: 'spring' }}
+										whileHover={{ scale: 1.2, rotate: 6 }}
+										className="p-3 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 hover:scale-110 shadow-md"
+									>
+										{item.icon}
+									</motion.a>
+								))}
 							</div>
 						</div>
 					</motion.div>
@@ -250,6 +263,6 @@ export function ContactSection() {
 					</Card>
 				</motion.div>
 			</div>
-		</section>
+		</AnimatedSection>
 	);
 }

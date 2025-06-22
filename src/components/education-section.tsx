@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { GraduationCap, MapPin, Calendar } from 'lucide-react';
+import { AnimatedSection } from '@/components/ui/animated-section';
 
 const education = [
 	{
@@ -74,7 +75,7 @@ const researchAccent = 'bg-gradient-to-b from-blue-500 via-purple-500 to-pink-50
 
 export function EducationSection() {
 	return (
-		<section id="education" className="py-20 bg-white dark:bg-gray-950">
+		<AnimatedSection id="education" className="py-20 bg-white dark:bg-gray-950">
 			<div className="max-w-7xl mx-auto px-2 sm:px-8 lg:px-12">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
@@ -83,7 +84,14 @@ export function EducationSection() {
 					viewport={{ once: true }}
 					className="text-center mb-16"
 				>
-					<h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">Education</h2>
+					<motion.h2
+						initial={{ opacity: 0, scale: 0.8 }}
+						whileInView={{ opacity: 1, scale: 1 }}
+						transition={{ duration: 0.7 }}
+						className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6"
+					>
+						Education
+					</motion.h2>
 					<p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">My academic background and qualifications.</p>
 				</motion.div>
 				<div className="relative border-l-2 border-blue-200 dark:border-blue-700 ml-8 sm:ml-16">
@@ -95,6 +103,7 @@ export function EducationSection() {
 							transition={{ duration: 0.7, delay: idx * 0.2 }}
 							viewport={{ once: true }}
 							className="mb-4 sm:mb-6 ml-8 sm:ml-12 relative"
+							whileHover={{ scale: 1.03, rotate: -1 }}
 						>
 							{/* Timeline Dot with animation */}
 							<motion.span
@@ -105,7 +114,7 @@ export function EducationSection() {
 							>
 								<GraduationCap className="w-5 h-5 text-white" />
 							</motion.span>
-							<Card className="bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-lg transition-all duration-300">
+							<Card className="bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-2xl transition-all duration-300">
 								<CardContent className="p-6">
 									<div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between mb-2">
 										<div>
@@ -158,6 +167,7 @@ export function EducationSection() {
 														whileInView={{ opacity: 1, y: 0 }}
 														transition={{ duration: 0.7, delay: idx * 0.2 }}
 														viewport={{ once: true }}
+														whileHover={{ scale: 1.05, rotate: -2 }}
 													>
 														<div
 															className={
@@ -205,6 +215,6 @@ export function EducationSection() {
 					))}
 				</div>
 			</div>
-		</section>
+		</AnimatedSection>
 	);
 }

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowDown, Mail } from 'lucide-react';
 import { LuInstagram, LuLinkedin, LuGithub } from 'react-icons/lu';
 import { useEffect, useState } from 'react';
+import { AnimatedSection } from '@/components/ui/animated-section';
 
 export function HeroSection() {
 	const [shimmer, setShimmer] = useState(false);
@@ -13,7 +14,7 @@ export function HeroSection() {
 	}, []);
 
 	return (
-		<section
+		<AnimatedSection
 			id="home"
 			className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-950 dark:via-slate-900 dark:to-gray-900"
 		>
@@ -39,8 +40,9 @@ export function HeroSection() {
 						initial={{ opacity: 0, scale: 0.8 }}
 						animate={{ opacity: 1, scale: 1 }}
 						transition={{ delay: 0.2, duration: 0.6 }}
-						className="inline-flex items-center px-4 py-2 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 relative"
+						className="inline-flex items-center px-4 py-2 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 relative shadow-lg"
 						suppressHydrationWarning
+						whileHover={{ scale: 1.08, rotate: 2 }}
 					>
 						<span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
 						<span className="text-sm font-medium text-gray-700 dark:text-gray-300 animate-pulse-slow">
@@ -162,6 +164,6 @@ export function HeroSection() {
 					<ArrowDown className="w-6 h-6 text-gray-400" />
 				</motion.div>
 			</motion.div>
-		</section>
+		</AnimatedSection>
 	);
 }

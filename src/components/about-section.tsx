@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Code, Globe, Zap, Users } from 'lucide-react';
+import { AnimatedSection } from '@/components/ui/animated-section';
 
 const stats = [
 	{ icon: Code, label: 'Projects Completed', value: '50+' },
@@ -13,7 +14,7 @@ const stats = [
 
 export function AboutSection() {
 	return (
-		<section id="about" className="py-20 bg-white dark:bg-gray-950">
+		<AnimatedSection id="about" className="py-20 bg-white dark:bg-gray-950">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
@@ -22,37 +23,46 @@ export function AboutSection() {
 					viewport={{ once: true }}
 					className="text-center mb-16"
 				>
-					<h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">About Me</h2>
+					<motion.h2
+						initial={{ opacity: 0, scale: 0.8 }}
+						whileInView={{ opacity: 1, scale: 1 }}
+						transition={{ duration: 0.7 }}
+						className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6"
+					>
+						About Me
+					</motion.h2>
 					<div className="flex justify-center mb-8">
-						<Card className="max-w-2xl text-left">
-							<CardContent>
-								<h3 className="text-2xl font-bold mb-2 text-blue-900 dark:text-blue-200">Professional Summary</h3>
-								<p className="text-lg text-gray-700 dark:text-gray-200 mb-2">
-									Versatile Software Engineer with nearly 2 years of progressive experience as an intern, trainee, and
-									associate. Proficiency in mobile and full-stack application development, producing reliable software
-									solutions that prioritize user expectations. Demonstrates skills in JavaScript, Java, Python, and various
-									technologies, including ReactJS, NodeJS, Flutter, and Android. Effectively applies agile methodologies
-									and DevOps practices. Proven ability to troubleshoot and resolve software defects, ensuring smooth
-									operations. Adept at continuous learning and staying updated on best practices in software development.
-									Seeking to use technical experience and innovative problem-solving abilities to drive successful projects
-									in a collaborative environment.
-								</p>
-								<div className="flex flex-wrap gap-2 mt-2">
-									<span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 rounded-full text-xs font-medium">
-										2 Years Experience
-									</span>
-									<span className="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 rounded-full text-xs font-medium">
-										Full-Stack & Mobile
-									</span>
-									<span className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200 rounded-full text-xs font-medium">
-										Agile & DevOps
-									</span>
-									<span className="px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200 rounded-full text-xs font-medium">
-										Continuous Learner
-									</span>
-								</div>
-							</CardContent>
-						</Card>
+						<motion.div whileHover={{ scale: 1.03, rotate: -1 }} transition={{ type: 'spring', stiffness: 300 }}>
+							<Card className="max-w-4xl text-left">
+								<CardContent>
+									<h3 className="text-2xl font-bold mb-2 text-blue-900 dark:text-blue-200">Professional Summary</h3>
+									<p className="text-lg text-gray-700 dark:text-gray-200 mb-2">
+										Versatile Software Engineer with nearly 2 years of progressive experience as an intern, trainee, and
+										associate. Proficiency in mobile and full-stack application development, producing reliable software
+										solutions that prioritize user expectations. Demonstrates skills in JavaScript, Java, Python, and
+										various technologies, including ReactJS, NodeJS, Flutter, and Android. Effectively applies agile
+										methodologies and DevOps practices. Proven ability to troubleshoot and resolve software defects,
+										ensuring smooth operations. Adept at continuous learning and staying updated on best practices in
+										software development. Seeking to use technical experience and innovative problem-solving abilities
+										to drive successful projects in a collaborative environment.
+									</p>
+									<div className="flex flex-wrap gap-2 mt-2">
+										<span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 rounded-full text-xs font-medium">
+											2 Years Experience
+										</span>
+										<span className="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 rounded-full text-xs font-medium">
+											Full-Stack & Mobile
+										</span>
+										<span className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200 rounded-full text-xs font-medium">
+											Agile & DevOps
+										</span>
+										<span className="px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200 rounded-full text-xs font-medium">
+											Continuous Learner
+										</span>
+									</div>
+								</CardContent>
+							</Card>
+						</motion.div>
 					</div>
 					<p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
 						Passionate software engineer with expertise in modern web technologies and a drive for creating exceptional user
@@ -68,6 +78,7 @@ export function AboutSection() {
 						transition={{ duration: 0.8 }}
 						viewport={{ once: true }}
 						className="relative"
+						whileHover={{ scale: 1.02, rotate: 1 }}
 					>
 						<div className="relative w-full h-96 rounded-2xl overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600">
 							<div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-600/20"></div>
@@ -135,8 +146,9 @@ export function AboutSection() {
 							whileInView={{ opacity: 1, scale: 1 }}
 							transition={{ duration: 0.5, delay: index * 0.1 }}
 							viewport={{ once: true }}
+							whileHover={{ scale: 1.07, rotate: -2 }}
 						>
-							<Card className="text-center p-6 hover:shadow-lg transition-shadow duration-300">
+							<Card className="text-center p-6 hover:shadow-2xl transition-shadow duration-300">
 								<CardContent className="p-0">
 									<stat.icon className="w-8 h-8 text-blue-600 dark:text-blue-400 mx-auto mb-3" />
 									<div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">{stat.value}</div>
@@ -147,6 +159,6 @@ export function AboutSection() {
 					))}
 				</motion.div>
 			</div>
-		</section>
+		</AnimatedSection>
 	);
 }

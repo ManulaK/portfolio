@@ -27,7 +27,8 @@ import {
 	SiGit,
 	SiGithub,
 } from 'react-icons/si';
-import { FaDatabase, FaProjectDiagram, FaCogs, FaBrain, FaRobot } from 'react-icons/fa';
+import { FaDatabase, FaProjectDiagram, FaCogs, FaBrain, FaRobot, FaEllipsisH, FaFigma, FaJira, FaRegKeyboard } from 'react-icons/fa';
+import { AnimatedSection } from '@/components/ui/animated-section';
 
 const skillGroups = [
 	{
@@ -72,41 +73,58 @@ const skillGroups = [
 		],
 	},
 	{
-		title: 'Version Control',
-		icon: SiGit,
+		title: 'Tools & DevOps',
+		icon: FaProjectDiagram,
 		skills: [
 			{ name: 'Git', icon: SiGit },
 			{ name: 'GitHub', icon: SiGithub },
-		],
-	},
-	{
-		title: 'DevOps & Project Management',
-		icon: FaProjectDiagram,
-		skills: [
 			{ name: 'DevOps Principles', icon: FaCogs },
 			{ name: 'Project Management', icon: FaProjectDiagram },
 			{ name: 'Agile Methodologies', icon: FaProjectDiagram },
 		],
 	},
 	{
-		title: 'CS Fundamentals',
+		title: 'CS & AI',
 		icon: FaBrain,
 		skills: [
 			{ name: 'Data Structures', icon: FaBrain },
 			{ name: 'Algorithms', icon: FaBrain },
 			{ name: 'Design Principles', icon: FaBrain },
+			{ name: 'Integrating LLMs & RAG', icon: FaRobot },
 		],
 	},
 	{
-		title: 'AI & LLM Integration',
-		icon: FaRobot,
-		skills: [{ name: 'Integrating LLMs & RAG', icon: FaRobot }],
+		title: 'Other',
+		icon: FaEllipsisH,
+		skills: [
+			{ name: 'Figma', icon: FaFigma },
+			{ name: 'Jira', icon: FaJira },
+			{ name: 'VS Code', icon: FaRegKeyboard },
+		],
 	},
 ];
 
+const MAX_CATEGORIES = 6;
+
+const mainSkillGroups = skillGroups.slice(0, MAX_CATEGORIES);
+const extraSkillGroups = skillGroups.slice(MAX_CATEGORIES);
+
+let otherSkills: { name: string; icon: any }[] = [];
+extraSkillGroups.forEach((group) => {
+	otherSkills = otherSkills.concat(group.skills);
+});
+
+if (otherSkills.length > 0) {
+	mainSkillGroups.push({
+		title: 'Other',
+		icon: FaEllipsisH,
+		skills: otherSkills,
+	});
+}
+
 export function SkillsSection() {
 	return (
-		<section id="skills" className="py-20 bg-gray-50 dark:bg-gray-900">
+		<AnimatedSection id="skills" className="py-20 bg-gray-50 dark:bg-gray-900">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
@@ -115,7 +133,14 @@ export function SkillsSection() {
 					viewport={{ once: true }}
 					className="text-center mb-16"
 				>
-					<h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">Skills & Technologies</h2>
+					<motion.h2
+						initial={{ opacity: 0, scale: 0.8 }}
+						whileInView={{ opacity: 1, scale: 1 }}
+						transition={{ duration: 0.7 }}
+						className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6"
+					>
+						Skills & Technologies
+					</motion.h2>
 					<p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
 						A comprehensive overview of my technical skills and expertise across various domains of software development.
 					</p>
@@ -130,7 +155,7 @@ export function SkillsSection() {
 							transition={{ duration: 0.8, delay: groupIdx * 0.1 }}
 							viewport={{ once: true }}
 						>
-							<Card className="h-full hover:shadow-xl transition-all duration-300 group">
+							<Card className="h-full hover:shadow-2xl transition-all duration-300 group">
 								<CardContent className="p-6">
 									<div className="flex items-center gap-3 mb-6">
 										<div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -198,61 +223,21 @@ export function SkillsSection() {
 							'Swagger',
 							'Jira',
 							'Confluence',
-							'Slack',
-							'Discord',
-							'Figma',
-							'Adobe Creative Suite',
-							'Sketch',
-							'InVision',
-							'Zeplin',
-							'Abstract',
-						].map((tool, index) => (
+						].map((tool, idx) => (
 							<motion.div
 								key={tool}
 								initial={{ opacity: 0, scale: 0.8 }}
 								whileInView={{ opacity: 1, scale: 1 }}
-								transition={{ duration: 0.5, delay: index * 0.05 }}
+								transition={{ duration: 0.5, delay: idx * 0.05 }}
 								viewport={{ once: true }}
-								className="px-4 py-3 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 text-center hover:shadow-md transition-all duration-300 hover:scale-105"
+								className="px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full border border-gray-200 dark:border-gray-700 text-sm font-medium text-gray-700 dark:text-gray-300 text-center shadow-md hover:shadow-xl transition-shadow duration-300"
 							>
-								<span className="text-sm font-medium text-gray-700 dark:text-gray-300">{tool}</span>
+								{tool}
 							</motion.div>
 						))}
 					</div>
 				</motion.div>
-
-				{/* Learning Section */}
-				<motion.div
-					initial={{ opacity: 0, y: 20 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.8, delay: 0.8 }}
-					viewport={{ once: true }}
-					className="mt-16 text-center"
-				>
-					<Card className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border-0">
-						<CardContent className="p-8">
-							<h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Currently Learning</h3>
-							<p className="text-gray-600 dark:text-gray-300 mb-6">
-								I&apos;m always expanding my skill set to stay current with the latest technologies and best practices.
-							</p>
-							<div className="flex flex-wrap justify-center gap-4">
-								{['Rust', 'WebAssembly', 'Machine Learning', 'Blockchain', 'Three.js', 'Svelte'].map((skill, index) => (
-									<motion.div
-										key={skill}
-										initial={{ opacity: 0, y: 20 }}
-										whileInView={{ opacity: 1, y: 0 }}
-										transition={{ duration: 0.5, delay: index * 0.1 }}
-										viewport={{ once: true }}
-										className="px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full border border-gray-200 dark:border-gray-700"
-									>
-										<span className="text-sm font-medium text-gray-700 dark:text-gray-300">{skill}</span>
-									</motion.div>
-								))}
-							</div>
-						</CardContent>
-					</Card>
-				</motion.div>
 			</div>
-		</section>
+		</AnimatedSection>
 	);
 }
