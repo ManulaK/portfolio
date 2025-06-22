@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { Card, CardContent } from '@/components/ui/card';
 
 const projects = [
 	{
@@ -82,8 +83,8 @@ export function ProjectsSection() {
 							transition={{ duration: 0.7, delay: idx * 0.1 }}
 							viewport={{ once: true }}
 						>
-							<div className="h-full flex flex-col rounded-2xl bg-white/80 dark:bg-gray-900/80 border border-gray-100 dark:border-gray-800 shadow-md hover:shadow-xl transition-shadow duration-300 p-6">
-								<div className="mb-3">
+							<Card className="h-full flex flex-col p-6">
+								<CardContent className="mb-3">
 									<h3 className="text-lg font-bold text-blue-900 dark:text-blue-200 mb-1">
 										{project.url ? (
 											<a
@@ -100,8 +101,8 @@ export function ProjectsSection() {
 									</h3>
 									<div className="text-sm text-blue-700 dark:text-blue-300 font-medium mb-1">{project.organization}</div>
 									<div className="text-xs text-gray-500 dark:text-gray-400">{project.date}</div>
-								</div>
-							</div>
+								</CardContent>
+							</Card>
 						</motion.div>
 					))}
 				</div>
