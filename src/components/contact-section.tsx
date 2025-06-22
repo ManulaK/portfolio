@@ -4,8 +4,12 @@ import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Instagram } from 'lucide-react';
+import { useState, useRef } from 'react';
 
 export function ContactSection() {
+	const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+	const formRef = useRef<HTMLFormElement>(null);
+
 	return (
 		<section id="contact" className="py-20 bg-white dark:bg-gray-950">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -115,7 +119,31 @@ export function ContactSection() {
 							<CardContent className="p-0">
 								<h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Send a Message</h3>
 
-								<form className="space-y-6">
+								<form
+									action="https://formspree.io/f/xkgbvdap"
+									method="POST"
+									ref={formRef}
+									onSubmit={(e) => {
+										e.preventDefault();
+										const form = e.currentTarget;
+										const data = new FormData(form);
+										fetch(form.action, {
+											method: 'POST',
+											body: data,
+											headers: { Accept: 'application/json' },
+										})
+											.then((res) => {
+												if (res.ok) {
+													setStatus('success');
+													formRef.current?.reset();
+												} else {
+													setStatus('error');
+												}
+											})
+											.catch(() => setStatus('error'));
+									}}
+									className="space-y-6"
+								>
 									<div className="grid md:grid-cols-2 gap-6">
 										<div>
 											<label
@@ -128,6 +156,7 @@ export function ContactSection() {
 												type="text"
 												id="firstName"
 												name="firstName"
+												required
 												className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
 												placeholder="John"
 											/>
@@ -143,12 +172,12 @@ export function ContactSection() {
 												type="text"
 												id="lastName"
 												name="lastName"
+												required
 												className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
 												placeholder="Doe"
 											/>
 										</div>
 									</div>
-
 									<div>
 										<label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
 											Email
@@ -157,27 +186,11 @@ export function ContactSection() {
 											type="email"
 											id="email"
 											name="email"
+											required
 											className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
-											placeholder="john@example.com"
+											placeholder="you@email.com"
 										/>
 									</div>
-
-									<div>
-										<label
-											htmlFor="subject"
-											className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
-										>
-											Subject
-										</label>
-										<input
-											type="text"
-											id="subject"
-											name="subject"
-											className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
-											placeholder="Project Inquiry"
-										/>
-									</div>
-
 									<div>
 										<label
 											htmlFor="message"
@@ -188,16 +201,26 @@ export function ContactSection() {
 										<textarea
 											id="message"
 											name="message"
-											rows={6}
-											className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 resize-none"
-											placeholder="Tell me about your project or how I can help..."
+											rows={4}
+											required
+											className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+											placeholder="Type your message..."
 										/>
 									</div>
-
 									<Button type="submit" variant="gradient" size="lg" className="w-full">
 										<Send className="w-5 h-5 mr-2" />
 										Send Message
 									</Button>
+									{status === 'success' && (
+										<p className="text-green-600 dark:text-green-400 mt-4 text-center">
+											Thank you! Your message has been sent.
+										</p>
+									)}
+									{status === 'error' && (
+										<p className="text-red-600 dark:text-red-400 mt-4 text-center">
+											Oops! Something went wrong. Please try again.
+										</p>
+									)}
 								</form>
 							</CardContent>
 						</Card>
