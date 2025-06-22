@@ -3,7 +3,8 @@
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { LuGithub, LuLinkedin, LuInstagram } from 'react-icons/lu';
 import { useState, useRef } from 'react';
 
 export function ContactSection() {
@@ -86,7 +87,7 @@ export function ContactSection() {
 									target="_blank"
 									rel="noopener noreferrer"
 								>
-									<Github className="w-6 h-6 text-gray-700 dark:text-gray-300" />
+									<LuGithub className="w-6 h-6 text-gray-700 dark:text-gray-300" />
 								</a>
 								<a
 									href="https://www.linkedin.com/in/manulakavinda/"
@@ -94,15 +95,15 @@ export function ContactSection() {
 									target="_blank"
 									rel="noopener noreferrer"
 								>
-									<Linkedin className="w-6 h-6 text-blue-700 dark:text-blue-400" />
+									<LuLinkedin className="w-6 h-6 text-blue-700 dark:text-blue-400" />
 								</a>
 								<a
-									href="https://www.instagram.com/manuu.k_____/"
+									href="https://www.instagram.com/manuu.k_____\/"
 									className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center hover:bg-pink-100 dark:hover:bg-pink-900/30 transition-colors duration-300"
 									target="_blank"
 									rel="noopener noreferrer"
 								>
-									<Instagram className="w-6 h-6 text-pink-600 dark:text-pink-400" />
+									<LuInstagram className="w-6 h-6 text-pink-600 dark:text-pink-400" />
 								</a>
 							</div>
 						</div>
@@ -188,7 +189,7 @@ export function ContactSection() {
 											name="email"
 											required
 											className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
-											placeholder="you@email.com"
+											placeholder="manulakavinda.dev@gmail.com"
 										/>
 									</div>
 									<div>

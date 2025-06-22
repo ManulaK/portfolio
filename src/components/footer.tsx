@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Instagram, Mail, Heart } from 'lucide-react';
+import { Mail, Heart } from 'lucide-react';
+import { LuGithub, LuLinkedin, LuInstagram } from 'react-icons/lu';
 import { useState, useEffect } from 'react';
 
 export function Footer() {
@@ -37,7 +38,7 @@ export function Footer() {
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								<Github className="w-5 h-5" />
+								<LuGithub className="w-5 h-5" />
 							</a>
 							<a
 								href="https://www.linkedin.com/in/manulakavinda/"
@@ -45,7 +46,7 @@ export function Footer() {
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								<Linkedin className="w-5 h-5" />
+								<LuLinkedin className="w-5 h-5" />
 							</a>
 							<a
 								href="https://www.instagram.com/manuu.k_____/"
@@ -53,10 +54,10 @@ export function Footer() {
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								<Instagram className="w-5 h-5" />
+								<LuInstagram className="w-5 h-5" />
 							</a>
 							<a
-								href="#"
+								href="mailto:manulakavinda.dev@gmail.com"
 								className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-300"
 							>
 								<Mail className="w-5 h-5" />

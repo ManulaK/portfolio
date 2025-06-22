@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowDown, Github, Linkedin, Instagram } from 'lucide-react';
+import { ArrowDown, Mail } from 'lucide-react';
+import { LuInstagram, LuLinkedin, LuGithub } from 'react-icons/lu';
 import { useEffect, useState } from 'react';
 
 export function HeroSection() {
@@ -112,15 +113,19 @@ export function HeroSection() {
 						{[
 							{
 								href: 'https://github.com/ManulaK',
-								icon: <Github className="w-5 h-5 text-gray-700 dark:text-gray-300" />,
+								icon: <LuGithub className="w-5 h-5 text-gray-700 dark:text-gray-300" />,
 							},
 							{
 								href: 'https://www.linkedin.com/in/manulakavinda/',
-								icon: <Linkedin className="w-5 h-5 text-blue-700 dark:text-blue-400" />,
+								icon: <LuLinkedin className="w-5 h-5 text-blue-700 dark:text-blue-400" />,
 							},
 							{
 								href: 'https://www.instagram.com/manuu.k_____/',
-								icon: <Instagram className="w-5 h-5 text-pink-600 dark:text-pink-400" />,
+								icon: <LuInstagram className="w-5 h-5 text-pink-600 dark:text-pink-400" />,
+							},
+							{
+								href: 'mailto:manulakavinda.dev@gmail.com',
+								icon: <Mail className="w-5 h-5 text-blue-500 dark:text-blue-300" />,
 							},
 						].map((item, i) => (
 							<motion.a
