@@ -117,7 +117,7 @@ const skillGroups: SkillGroup[] = [
 
 export function SkillsSection() {
 	return (
-		<AnimatedSection id="skills" className="py-6 sm:py-10 md:py-16 bg-gray-50 dark:bg-gray-900 scroll-mt-20">
+		<AnimatedSection id="skills" className="py-6 sm:py-10 md:py-16 bg-gray-50 scroll-mt-20">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
@@ -130,11 +130,11 @@ export function SkillsSection() {
 						initial={{ opacity: 0, scale: 0.8 }}
 						whileInView={{ opacity: 1, scale: 1 }}
 						transition={{ duration: 0.7 }}
-						className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6"
+						className="text-4xl sm:text-5xl font-bold mb-6"
 					>
 						Skills & Technologies
 					</motion.h2>
-					<p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+					<p className="text-xl text-gray-600 max-w-3xl mx-auto">
 						A comprehensive overview of my technical skills and expertise across various domains of software development.
 					</p>
 				</motion.div>
@@ -154,7 +154,7 @@ export function SkillsSection() {
 										<div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
 											<group.icon className="w-6 h-6 text-white" />
 										</div>
-										<h3 className="text-xl font-bold text-gray-900 dark:text-white">{group.title}</h3>
+										<h3 className="text-xl font-bold">{group.title}</h3>
 									</div>
 									<div className="flex flex-wrap gap-4">
 										{group.skills.map((skill, skillIdx) => (
@@ -169,13 +169,11 @@ export function SkillsSection() {
 												{skill.icon ? (
 													<skill.icon className="w-8 h-8 mb-1" />
 												) : (
-													<span className="w-8 h-8 mb-1 flex items-center justify-center bg-gray-200 dark:bg-gray-700 rounded-full text-gray-500">
+													<span className="w-8 h-8 mb-1 flex items-center justify-center bg-gray-200 rounded-full text-gray-500">
 														?
 													</span>
 												)}
-												<span className="text-xs font-medium text-gray-700 dark:text-gray-300 text-center">
-													{skill.name}
-												</span>
+												<span className="text-xs font-medium text-gray-700 text-center">{skill.name}</span>
 											</motion.div>
 										))}
 									</div>
@@ -194,10 +192,9 @@ export function SkillsSection() {
 					className="mt-16"
 				>
 					<div className="text-center mb-8">
-						<h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Additional Skills & Tools</h3>
-						<p className="text-gray-600 dark:text-gray-300">Other technologies and tools I work with</p>
+						<h3 className="text-2xl font-bold mb-4">Additional Skills & Tools</h3>
+						<p className="text-gray-600">Other technologies and tools I work with</p>
 					</div>
-
 					<div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
 						{[
 							'Git',
@@ -223,7 +220,7 @@ export function SkillsSection() {
 								whileInView={{ opacity: 1, scale: 1 }}
 								transition={{ duration: 0.5, delay: idx * 0.05 }}
 								viewport={{ once: true }}
-								className="px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full border border-gray-200 dark:border-gray-700 text-sm font-medium text-gray-700 dark:text-gray-300 text-center shadow-md hover:shadow-xl transition-shadow duration-300"
+								className="text-base font-medium text-gray-700 text-center cursor-pointer transition duration-200 hover:text-shadow"
 							>
 								{tool}
 							</motion.div>

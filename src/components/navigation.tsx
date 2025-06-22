@@ -52,7 +52,7 @@ export function Navigation() {
 								<a
 									key={item.name}
 									href={item.href}
-									className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium"
+									className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
 								>
 									{item.name}
 								</a>
@@ -78,9 +78,7 @@ export function Navigation() {
 				initial={{ y: -100 }}
 				animate={{ y: 0 }}
 				className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-					scrolled
-						? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700'
-						: 'bg-transparent border-b-0 border-transparent'
+					scrolled ? 'bg-white/80 backdrop-blur-md border-b border-gray-200' : 'bg-transparent border-b-0 border-transparent'
 				}`}
 			>
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -100,7 +98,7 @@ export function Navigation() {
 									key={item.name}
 									href={item.href}
 									whileHover={{ scale: 1.05 }}
-									className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium"
+									className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
 									onClick={(e) => handleNavClick(e, item.href)}
 								>
 									{item.name}
@@ -129,7 +127,7 @@ export function Navigation() {
 						animate={{ opacity: 1, x: 0 }}
 						exit={{ opacity: 0, x: '100%' }}
 						transition={{ duration: 0.3 }}
-						className="fixed top-16 right-0 w-64 h-screen bg-white dark:bg-gray-900 border-l border-gray-200 dark:border-gray-800 z-40 md:hidden"
+						className="fixed top-16 right-0 w-64 h-screen bg-white border-l border-gray-200 z-40 md:hidden"
 					>
 						<div className="flex flex-col p-6 space-y-4">
 							{navItems.map((item) => (
@@ -137,7 +135,7 @@ export function Navigation() {
 									key={item.name}
 									href={item.href}
 									whileHover={{ x: 10 }}
-									className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium py-2"
+									className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium py-2"
 									onClick={(e) => handleNavClick(e, item.href)}
 								>
 									{item.name}

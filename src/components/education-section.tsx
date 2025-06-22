@@ -75,7 +75,7 @@ const researchAccent = 'bg-gradient-to-b from-blue-500 via-purple-500 to-pink-50
 
 export function EducationSection() {
 	return (
-		<AnimatedSection id="education" className="py-20 bg-white dark:bg-gray-950 scroll-mt-20">
+		<AnimatedSection id="education" className="py-20 bg-white scroll-mt-20">
 			<div className="max-w-7xl mx-auto px-2 sm:px-8 lg:px-12">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
@@ -88,13 +88,13 @@ export function EducationSection() {
 						initial={{ opacity: 0, scale: 0.8 }}
 						whileInView={{ opacity: 1, scale: 1 }}
 						transition={{ duration: 0.7 }}
-						className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6"
+						className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6"
 					>
 						Education
 					</motion.h2>
-					<p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">My academic background and qualifications.</p>
+					<p className="text-xl text-gray-600 max-w-3xl mx-auto">My academic background and qualifications.</p>
 				</motion.div>
-				<div className="relative border-l-2 border-blue-200 dark:border-blue-700 ml-8 sm:ml-16">
+				<div className="relative border-l-2 border-blue-200 ml-8 sm:ml-16">
 					{education.map((edu, idx) => (
 						<motion.div
 							key={edu.degree + edu.institution}
@@ -107,25 +107,23 @@ export function EducationSection() {
 						>
 							{/* Timeline Dot with animation */}
 							<motion.span
-								className="absolute -left-12 sm:-left-16 top-6 w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg border-4 border-white dark:border-gray-900 z-10"
+								className="absolute -left-12 sm:-left-16 top-6 w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg border-4 border-white z-10"
 								initial={{ scale: 0.8, opacity: 0.7 }}
 								whileInView={{ scale: 1, opacity: 1 }}
 								transition={{ duration: 0.5, delay: idx * 0.2 }}
 							>
 								<GraduationCap className="w-5 h-5 text-white" />
 							</motion.span>
-							<Card className="bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-2xl transition-all duration-300">
+							<Card className="bg-white border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300">
 								<CardContent className="p-6">
 									<div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between mb-2">
 										<div>
-											<h3 className="text-xl font-bold text-blue-900 dark:text-blue-200 leading-tight">
-												{edu.degree}
-											</h3>
-											<span className="block text-sm font-medium text-blue-700 dark:text-blue-300 opacity-80 mt-1 sm:mt-0">
+											<h3 className="text-xl font-bold leading-tight">{edu.degree}</h3>
+											<span className="block text-sm font-medium text-blue-700 opacity-80 mt-1 sm:mt-0">
 												{edu.institution}
 											</span>
 										</div>
-										<div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs sm:text-sm mt-2 sm:mt-0">
+										<div className="flex items-center gap-2 text-gray-500 text-xs sm:text-sm mt-2 sm:mt-0">
 											<Calendar className="w-4 h-4" />
 											<span>{edu.year}</span>
 											<span className="mx-2 hidden sm:inline">|</span>
@@ -133,18 +131,14 @@ export function EducationSection() {
 											<span>{edu.location}</span>
 										</div>
 									</div>
-									{edu.description && (
-										<div className="mt-2 text-gray-700 dark:text-gray-300 text-sm">{edu.description}</div>
-									)}
-									{edu.extra && (
-										<div className="mt-2 text-gray-600 dark:text-gray-400 text-xs sm:text-sm italic">{edu.extra}</div>
-									)}
+									{edu.description && <div className="mt-2 text-gray-700 text-sm">{edu.description}</div>}
+									{edu.extra && <div className="mt-2 text-gray-600 text-xs sm:text-sm italic">{edu.extra}</div>}
 									{/* Nested Research Projects for BSc (Hons) */}
 									{edu.research && edu.research.length > 0 && (
 										<div className="mt-6">
-											<div className="font-semibold text-blue-800 dark:text-blue-200 mb-4 text-base flex items-center gap-2">
+											<div className="font-semibold text-blue-800 mb-4 text-base flex items-center gap-2">
 												<svg
-													className="w-5 h-5 text-blue-500 dark:text-blue-300"
+													className="w-5 h-5 text-blue-500"
 													fill="none"
 													stroke="currentColor"
 													strokeWidth="2"
@@ -172,7 +166,7 @@ export function EducationSection() {
 														<div
 															className={
 																`relative flex h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 ` +
-																`bg-white/70 dark:bg-gray-900/70 backdrop-blur-md border border-gray-100 dark:border-gray-800`
+																`bg-white/70 backdrop-blur-md border border-gray-100`
 															}
 														>
 															{/* Accent border */}
@@ -180,25 +174,23 @@ export function EducationSection() {
 															<div className="flex-1 p-5 flex flex-col justify-between">
 																<div>
 																	<div className="flex items-center gap-2 mb-2">
-																		<GraduationCap className="w-5 h-5 text-blue-500 dark:text-blue-300" />
-																		<span className="text-xs font-semibold text-blue-700 dark:text-blue-300 uppercase tracking-wide">
+																		<GraduationCap className="w-5 h-5 text-blue-500" />
+																		<span className="text-xs font-semibold uppercase tracking-wide">
 																			{item.institution}
 																		</span>
 																		<span className="mx-2 text-gray-400">|</span>
 																		<Calendar className="w-4 h-4 text-gray-400" />
-																		<span className="text-xs text-gray-500 dark:text-gray-400">
-																			{item.year}
-																		</span>
+																		<span className="text-xs text-gray-500">{item.year}</span>
 																	</div>
-																	<h4 className="text-base sm:text-lg font-bold text-blue-900 dark:text-blue-100 mb-2 leading-snug">
+																	<h4 className="text-base sm:text-lg font-bold mb-2 leading-snug">
 																		{item.title}
 																	</h4>
-																	<div className="text-gray-700 dark:text-gray-300 text-sm mb-3">
+																	<div className="text-gray-700 text-sm mb-3">
 																		{item.description}
 																	</div>
 																</div>
 																{item.publication && (
-																	<div className="inline-block mt-2 px-3 py-1 bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 dark:from-blue-900/30 dark:via-purple-900/30 dark:to-pink-900/30 text-xs font-semibold text-blue-700 dark:text-blue-200 rounded-full shadow-sm">
+																	<div className="inline-block mt-2 px-3 py-1 bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 text-xs font-semibold text-blue-700 rounded-full shadow-sm">
 																		{item.publication}
 																	</div>
 																)}

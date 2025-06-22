@@ -16,7 +16,7 @@ export function HeroSection() {
 	return (
 		<AnimatedSection
 			id="home"
-			className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-950 dark:via-slate-900 dark:to-gray-900"
+			className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100"
 		>
 			{/* Background Elements */}
 			<div className="absolute inset-0 overflow-hidden">
@@ -40,14 +40,12 @@ export function HeroSection() {
 						initial={{ opacity: 0, scale: 0.8 }}
 						animate={{ opacity: 1, scale: 1 }}
 						transition={{ delay: 0.2, duration: 0.6 }}
-						className="inline-flex items-center px-4 py-2 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 relative shadow-lg"
+						className="inline-flex items-center px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 relative shadow-lg"
 						suppressHydrationWarning
 						whileHover={{ scale: 1.08, rotate: 2 }}
 					>
 						<span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
-						<span className="text-sm font-medium text-gray-700 dark:text-gray-300 animate-pulse-slow">
-							Available for opportunities
-						</span>
+						<span className="text-sm font-medium text-gray-700 animate-pulse-slow">Available for opportunities</span>
 						<span className="absolute inset-0 rounded-full pointer-events-none animate-glow-badge" />
 					</motion.div>
 
@@ -59,7 +57,7 @@ export function HeroSection() {
 						className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight"
 					>
 						<span
-							className={`bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 dark:from-white dark:via-blue-200 dark:to-purple-200 bg-clip-text text-transparent relative inline-block ${
+							className={`bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent relative inline-block ${
 								shimmer ? 'animate-shimmer' : ''
 							}`}
 						>
@@ -73,7 +71,7 @@ export function HeroSection() {
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ delay: 0.6, duration: 0.8 }}
-						className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed"
+						className="text-xl sm:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed"
 					>
 						Software Engineer crafting exceptional digital experiences with modern technologies and innovative solutions.
 					</motion.p>
@@ -95,7 +93,7 @@ export function HeroSection() {
 						<a
 							href="/Manula Kavinda Resume 2025.pdf"
 							download
-							className="text-lg px-8 py-3 animate-bounce-once delay-150 inline-block rounded-md border border-gray-200 dark:border-gray-800 bg-background hover:bg-accent hover:text-accent-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 shadow-md hover:shadow-lg transition-shadow duration-300 hover:-translate-y-0.5 hover:scale-[1.03] text-center font-bold text-gray-700 dark:text-gray-200"
+							className="text-lg px-8 py-3 animate-bounce-once delay-150 inline-block rounded-md border border-gray-200 bg-background hover:bg-accent hover:text-accent-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 shadow-md hover:shadow-lg transition-shadow duration-300 hover:-translate-y-0.5 hover:scale-[1.03] text-center font-bold text-gray-700"
 							style={{ textDecoration: 'none' }}
 						>
 							Download Resume
@@ -115,19 +113,19 @@ export function HeroSection() {
 						{[
 							{
 								href: 'https://github.com/ManulaK',
-								icon: <LuGithub className="w-5 h-5 text-gray-700 dark:text-gray-300" />,
+								icon: <LuGithub className="w-5 h-5 text-gray-700" />,
 							},
 							{
 								href: 'https://www.linkedin.com/in/manulakavinda/',
-								icon: <LuLinkedin className="w-5 h-5 text-blue-700 dark:text-blue-400" />,
+								icon: <LuLinkedin className="w-5 h-5 text-blue-700" />,
 							},
 							{
 								href: 'https://www.instagram.com/manuu.k_____/',
-								icon: <LuInstagram className="w-5 h-5 text-pink-600 dark:text-pink-400" />,
+								icon: <LuInstagram className="w-5 h-5 text-pink-600" />,
 							},
 							{
 								href: 'mailto:manulakavinda.dev@gmail.com',
-								icon: <Mail className="w-5 h-5 text-blue-500 dark:text-blue-300" />,
+								icon: <Mail className="w-5 h-5 text-blue-500" />,
 							},
 						].map((item, i) => (
 							<motion.a
@@ -139,7 +137,7 @@ export function HeroSection() {
 								animate={{ opacity: 1, scale: 1 }}
 								transition={{ delay: 1 + i * 0.15, duration: 0.5, type: 'spring' }}
 								whileHover={{ scale: 1.2, rotate: 6 }}
-								className="p-3 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 hover:scale-110 shadow-md"
+								className="p-3 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 hover:bg-white transition-all duration-300 hover:scale-110 shadow-md"
 							>
 								{item.icon}
 							</motion.a>

@@ -33,7 +33,7 @@ const experiences = [
 
 export function ExperienceSection() {
 	return (
-		<AnimatedSection id="experience" className="py-20 bg-gray-50 dark:bg-gray-900 scroll-mt-20">
+		<AnimatedSection id="experience" className="py-20 bg-gray-50 scroll-mt-20">
 			<div className="max-w-6xl mx-auto px-2 sm:px-8 lg:px-12">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
@@ -46,15 +46,15 @@ export function ExperienceSection() {
 						initial={{ opacity: 0, scale: 0.8 }}
 						whileInView={{ opacity: 1, scale: 1 }}
 						transition={{ duration: 0.7 }}
-						className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6"
+						className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6"
 					>
 						Work Experience
 					</motion.h2>
-					<p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+					<p className="text-xl text-gray-600 max-w-3xl mx-auto">
 						My professional journey as a software engineer, building impactful solutions and growing with every challenge.
 					</p>
 				</motion.div>
-				<div className="relative border-l-2 border-blue-200 dark:border-blue-700 ml-8 sm:ml-16">
+				<div className="relative border-l-2 border-blue-200 ml-8 sm:ml-16">
 					{experiences.map((exp, idx) => (
 						<motion.div
 							key={exp.title}
@@ -67,25 +67,23 @@ export function ExperienceSection() {
 						>
 							{/* Timeline Dot with animation */}
 							<motion.span
-								className="absolute -left-12 sm:-left-16 top-6 w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg border-4 border-white dark:border-gray-900 z-10"
+								className="absolute -left-12 sm:-left-16 top-6 w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg border-4 border-white z-10"
 								initial={{ scale: 0.8, opacity: 0.7 }}
 								whileInView={{ scale: 1, opacity: 1 }}
 								transition={{ duration: 0.5, delay: idx * 0.2 }}
 							>
 								<Briefcase className="w-5 h-5 text-white" />
 							</motion.span>
-							<Card className="bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-2xl transition-all duration-300">
+							<Card className="bg-white border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300">
 								<CardContent className="p-6">
 									<div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between mb-2">
 										<div>
-											<h3 className="text-2xl font-bold text-blue-900 dark:text-blue-200 leading-tight">
-												{exp.title}
-											</h3>
-											<span className="block text-sm font-medium text-blue-700 dark:text-blue-300 opacity-80 mt-1 sm:mt-0">
+											<h3 className="text-2xl font-bold text-blue-900 leading-tight">{exp.title}</h3>
+											<span className="block text-sm font-medium text-blue-700 opacity-80 mt-1 sm:mt-0">
 												{exp.company}
 											</span>
 										</div>
-										<div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs sm:text-sm mt-2 sm:mt-0">
+										<div className="flex items-center gap-2 text-gray-500 text-xs sm:text-sm mt-2 sm:mt-0">
 											<Calendar className="w-4 h-4" />
 											<span>{exp.duration}</span>
 											<span className="mx-2 hidden sm:inline">|</span>
@@ -93,7 +91,7 @@ export function ExperienceSection() {
 											<span>{exp.location}</span>
 										</div>
 									</div>
-									<ul className="list-disc pl-5 mt-3 space-y-2 text-gray-700 dark:text-gray-300 text-sm sm:text-base">
+									<ul className="list-disc pl-5 mt-3 space-y-2 text-gray-700 text-sm sm:text-base">
 										{exp.achievements.map((ach, i) => (
 											<li key={i}>{ach}</li>
 										))}

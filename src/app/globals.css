@@ -12,13 +12,6 @@
 	--font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background: #0a0a0a;
-		--foreground: #ededed;
-	}
-}
-
 body {
 	background: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 100%);
 	color: var(--foreground);
@@ -76,21 +69,6 @@ html {
 	background: #a8a8a8;
 }
 
-/* Dark mode scrollbar */
-@media (prefers-color-scheme: dark) {
-	::-webkit-scrollbar-track {
-		background: #1f1f1f;
-	}
-
-	::-webkit-scrollbar-thumb {
-		background: #404040;
-	}
-
-	::-webkit-scrollbar-thumb:hover {
-		background: #525252;
-	}
-}
-
 /* Focus styles */
 *:focus {
 	outline: 2px solid #3b82f6;
@@ -141,3 +119,12 @@ html {
 }
 
 /* (End of custom animations) */
+
+.text-shadow {
+	text-shadow: 0 2px 8px rgba(59, 130, 246, 0.25);
+}
+
+html,
+body {
+	overflow-x: hidden;
+}

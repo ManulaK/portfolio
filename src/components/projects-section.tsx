@@ -61,7 +61,7 @@ const projects = [
 
 export function ProjectsSection() {
 	return (
-		<AnimatedSection id="projects" className="py-20 bg-white dark:bg-gray-950 scroll-mt-20">
+		<AnimatedSection id="projects" className="py-8 sm:py-12 md:py-20 bg-white scroll-mt-20">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
@@ -74,15 +74,15 @@ export function ProjectsSection() {
 						initial={{ opacity: 0, scale: 0.8 }}
 						whileInView={{ opacity: 1, scale: 1 }}
 						transition={{ duration: 0.7 }}
-						className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6"
+						className="text-4xl sm:text-5xl font-bold mb-6"
 					>
 						Projects
 					</motion.h2>
-					<p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+					<p className="text-xl text-gray-600 max-w-3xl mx-auto">
 						A selection of my real-world software projects, spanning web, mobile, AI, and enterprise solutions.
 					</p>
 				</motion.div>
-				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
 					{projects.map((project, idx) => (
 						<motion.div
 							key={project.title}
@@ -94,13 +94,13 @@ export function ProjectsSection() {
 						>
 							<Card className="h-full flex flex-col p-6 hover:shadow-2xl transition-shadow duration-300">
 								<CardContent className="mb-3">
-									<h3 className="text-lg font-bold text-blue-900 dark:text-blue-200 mb-1">
+									<h3 className="text-lg font-bold mb-1">
 										{project.url ? (
 											<a
 												href={project.url}
 												target="_blank"
 												rel="noopener noreferrer"
-												className="hover:underline hover:text-blue-600 dark:hover:text-blue-400"
+												className="hover:underline hover:text-blue-600"
 											>
 												{project.title}
 											</a>
@@ -108,8 +108,8 @@ export function ProjectsSection() {
 											project.title
 										)}
 									</h3>
-									<div className="text-sm text-blue-700 dark:text-blue-300 font-medium mb-1">{project.organization}</div>
-									<div className="text-xs text-gray-500 dark:text-gray-400">{project.date}</div>
+									<div className="text-sm font-medium mb-1">{project.organization}</div>
+									<div className="text-xs text-gray-500">{project.date}</div>
 								</CardContent>
 							</Card>
 						</motion.div>
