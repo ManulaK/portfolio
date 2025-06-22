@@ -8,7 +8,7 @@ const education = [
 	{
 		degree: 'BSc (Hons) in Information Technology Specializing in Software Engineering',
 		institution: 'Sri Lanka Institute of Information Technology',
-		location: 'New Kandy Rd, Malabe, Sri Lanka',
+		location: 'Malabe, Sri Lanka',
 		year: '2025',
 		extra: 'Classification: Second Division Class',
 		description:
@@ -75,7 +75,7 @@ const researchAccent = 'bg-gradient-to-b from-blue-500 via-purple-500 to-pink-50
 export function EducationSection() {
 	return (
 		<section id="education" className="py-20 bg-white dark:bg-gray-950">
-			<div className="max-w-6xl mx-auto px-2 sm:px-8 lg:px-12">
+			<div className="max-w-7xl mx-auto px-2 sm:px-8 lg:px-12">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
@@ -94,7 +94,7 @@ export function EducationSection() {
 							whileInView={{ opacity: 1, x: 0 }}
 							transition={{ duration: 0.7, delay: idx * 0.2 }}
 							viewport={{ once: true }}
-							className="mb-8 sm:mb-10 ml-8 sm:ml-12 relative"
+							className="mb-4 sm:mb-6 ml-8 sm:ml-12 relative"
 						>
 							{/* Timeline Dot with animation */}
 							<motion.span
