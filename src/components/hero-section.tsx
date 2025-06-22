@@ -85,7 +85,7 @@ export function HeroSection() {
 					>
 						<a
 							href="#projects"
-							className="text-lg px-8 py-3 animate-bounce-once inline-block rounded-md bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold shadow-md hover:shadow-lg transition-shadow duration-300 hover:-translate-y-0.5 hover:scale-[1.03] text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+							className="text-lg px-8 py-3 animate-bounce-once inline-block rounded-md bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold shadow-md hover:shadow-lg transition-shadow duration-300 hover:-translate-y-0.5 hover:scale-[1.03] text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
 							style={{ textDecoration: 'none' }}
 						>
 							View My Work
