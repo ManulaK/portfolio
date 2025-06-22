@@ -115,3 +115,25 @@ html {
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
 }
+
+/* Custom shimmer and glow animations for Hero section */
+@keyframes shimmer {
+	0% {
+		background-position: 200% 0;
+	}
+	100% {
+		background-position: -200% 0;
+	}
+}
+.animate-shimmer {
+	background-size: 200% 100%;
+	animation: shimmer 2.5s linear infinite;
+}
+@keyframes glowBadge {
+}
+
+.animate-bounce-once {
+	animation: bounceOnce 0.7s cubic-bezier(0.4, 0, 0.6, 1) 1;
+}
+
+/* (End of custom animations) */
