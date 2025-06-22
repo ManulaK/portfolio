@@ -14,7 +14,7 @@ const stats = [
 
 export function AboutSection() {
 	return (
-		<AnimatedSection id="about" className="py-20 bg-white dark:bg-gray-950 scroll-mt-20">
+		<AnimatedSection id="about" className="py-6 sm:py-10 md:py-16 bg-white dark:bg-gray-950 scroll-mt-20">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
@@ -70,7 +70,7 @@ export function AboutSection() {
 					</p>
 				</motion.div>
 
-				<div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+				<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8 md:gap-12 items-center mb-16 min-h-0">
 					{/* Left Column - Image */}
 					<motion.div
 						initial={{ opacity: 0, x: -50 }}
@@ -80,7 +80,7 @@ export function AboutSection() {
 						className="relative"
 						whileHover={{ scale: 1.02, rotate: 1 }}
 					>
-						<div className="relative w-full h-96 rounded-2xl overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600">
+						<div className="relative w-full h-40 sm:h-56 md:h-80 lg:h-96 rounded-2xl overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600">
 							<div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-600/20"></div>
 							<div className="absolute inset-0 flex items-center justify-center">
 								<div className="text-white text-center">

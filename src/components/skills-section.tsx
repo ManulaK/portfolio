@@ -117,7 +117,7 @@ const skillGroups: SkillGroup[] = [
 
 export function SkillsSection() {
 	return (
-		<AnimatedSection id="skills" className="py-20 bg-gray-50 dark:bg-gray-900 scroll-mt-20">
+		<AnimatedSection id="skills" className="py-6 sm:py-10 md:py-16 bg-gray-50 dark:bg-gray-900 scroll-mt-20">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
@@ -139,7 +139,7 @@ export function SkillsSection() {
 					</p>
 				</motion.div>
 
-				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 min-h-0">
 					{skillGroups.map((group, groupIdx) => (
 						<motion.div
 							key={group.title}
@@ -148,7 +148,7 @@ export function SkillsSection() {
 							transition={{ duration: 0.8, delay: groupIdx * 0.1 }}
 							viewport={{ once: true }}
 						>
-							<Card className="h-full hover:shadow-2xl transition-all duration-300 group">
+							<Card className="hover:shadow-2xl transition-all duration-300 group">
 								<CardContent className="p-6">
 									<div className="flex items-center gap-3 mb-6">
 										<div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
