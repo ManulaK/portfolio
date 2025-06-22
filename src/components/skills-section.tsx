@@ -30,7 +30,18 @@ import {
 import { FaDatabase, FaProjectDiagram, FaCogs, FaBrain, FaRobot, FaEllipsisH, FaFigma, FaJira, FaRegKeyboard } from 'react-icons/fa';
 import { AnimatedSection } from '@/components/ui/animated-section';
 
-const skillGroups = [
+type Skill = {
+	name: string;
+	icon: React.ComponentType<{ className?: string }>;
+};
+
+type SkillGroup = {
+	title: string;
+	icon: React.ComponentType<{ className?: string }>;
+	skills: Skill[];
+};
+
+const skillGroups: SkillGroup[] = [
 	{
 		title: 'Programming Languages',
 		icon: FaBrain,
