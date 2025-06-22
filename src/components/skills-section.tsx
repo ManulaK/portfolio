@@ -115,24 +115,6 @@ const skillGroups: SkillGroup[] = [
 	},
 ];
 
-const MAX_CATEGORIES = 6;
-
-const mainSkillGroups = skillGroups.slice(0, MAX_CATEGORIES);
-const extraSkillGroups = skillGroups.slice(MAX_CATEGORIES);
-
-let otherSkills: { name: string; icon: any }[] = [];
-extraSkillGroups.forEach((group) => {
-	otherSkills = otherSkills.concat(group.skills);
-});
-
-if (otherSkills.length > 0) {
-	mainSkillGroups.push({
-		title: 'Other',
-		icon: FaEllipsisH,
-		skills: otherSkills,
-	});
-}
-
 export function SkillsSection() {
 	return (
 		<AnimatedSection id="skills" className="py-20 bg-gray-50 dark:bg-gray-900">
