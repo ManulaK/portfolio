@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
 import { ArrowDown, Github, Linkedin, Instagram } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
