@@ -190,7 +190,7 @@ export function EducationSection() {
 																	</div>
 																</div>
 																{item.publication && (
-																	<div className="inline-block mt-2 px-3 py-1 bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 text-xs font-semibold text-blue-700 rounded-full shadow-sm">
+																	<div className="block w-full mt-2 px-3 py-1 bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 text-xs font-semibold text-blue-700 rounded-full shadow-sm break-words max-w-full text-sm">
 																		{item.publication}
 																	</div>
 																)}
