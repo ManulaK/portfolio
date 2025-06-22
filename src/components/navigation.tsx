@@ -28,6 +28,18 @@ export function Navigation() {
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
 
+	const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+		if (href.startsWith('#')) {
+			e.preventDefault();
+			const id = href.replace('#', '');
+			const el = document.getElementById(id);
+			if (el) {
+				el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			}
+			setIsOpen(false); // close mobile menu if open
+		}
+	};
+
 	// Prevent hydration mismatch by not rendering until mounted
 	if (!mounted) {
 		return (
@@ -89,6 +101,7 @@ export function Navigation() {
 									href={item.href}
 									whileHover={{ scale: 1.05 }}
 									className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium"
+									onClick={(e) => handleNavClick(e, item.href)}
 								>
 									{item.name}
 								</motion.a>
@@ -125,7 +138,7 @@ export function Navigation() {
 									href={item.href}
 									whileHover={{ x: 10 }}
 									className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium py-2"
-									onClick={() => setIsOpen(false)}
+									onClick={(e) => handleNavClick(e, item.href)}
 								>
 									{item.name}
 								</motion.a>
