@@ -5,13 +5,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Code, Globe, Zap, Users } from 'lucide-react';
 import { AnimatedSection } from '@/components/ui/animated-section';
 
-const stats = [
-	{ icon: Code, label: 'Projects', value: '50+' },
-	{ icon: Globe, label: 'Years Experience', value: '2+' },
-	{ icon: Zap, label: 'Technologies', value: '20+' },
-	{ icon: Users, label: 'Happy Clients', value: '30+' },
-];
-
 export function AboutSection() {
 	return (
 		<AnimatedSection id="about" className="py-6 sm:py-10 md:py-16 bg-white scroll-mt-20">
