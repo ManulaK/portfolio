@@ -9,14 +9,29 @@ import { AnimatedBlobsBackground } from './ui/animated-blobs-background';
 const experiences = [
 	{
 		title: 'Associate Software Engineer',
-		company: 'Orel Corporation (Pvt) Ltd',
-		location: 'Orel Park, Meegoda, Sri Lanka',
-		duration: 'September 2023 - June 2025',
+		company: 'Orel Group (Pvt) Ltd',
+		location: 'Colombo, Sri Lanka',
+		duration: 'June 2024 - June 2025',
 		achievements: [
-			'Led and collaborated on over 5-6 internal and external projects, focusing on front-end and mobile development, contributing to the achievement of company goals, and enhancing employee satisfaction.',
-			'Continuously learned and successfully adopted emerging technologies, improving software performance and stability.',
-			'Planned, designed, implemented, and tested software modules in collaboration with senior engineers, ensuring seamless integration and functionality across the organization.',
-			'Adhered to best practices in software development and project management, delivering high-quality enterprise modules.',
+			'Led 3–4 projects focused on front-end (ReactJS, NextJS), mobile (Flutter), and backend development using Node.js, Express, TypeScript, and microservices architecture.',
+			'Took ownership of key software modules, driving improvements in performance, stability, and scalability.',
+			'Collaborated with cross-functional teams to design and implement reusable components and features.',
+			'Mentored junior developers and interns, promoting best practices and code quality.',
+			'Ensured adherence to Agile methodologies, CI/CD pipelines, and version control (Git) for high-quality deliverables.',
+			'Utilized AI tools to enhance development workflows and improve software quality.',
+		],
+	},
+	{
+		title: 'Trainee Software Engineer',
+		company: 'Orel Group (Pvt) Ltd',
+		location: 'Colombo, Sri Lanka',
+		duration: 'September 2023 - June 2024',
+		achievements: [
+			'Supported senior engineers in planning, designing, implementing, and testing software modules focused on front-end (ReactJS) and mobile applications (Flutter).',
+			'Assisted in debugging and resolving software issues to enhance system reliability and user satisfaction.',
+			'Actively learned and applied emerging technologies and development methodologies.',
+			'Participated in code reviews and improved code quality and maintainability.',
+			'Gained hands-on experience in Agile workflows, version control (Git), and collaborative project environments.',
 		],
 	},
 	{
@@ -37,13 +52,13 @@ export function ExperienceSection() {
 		<AnimatedSection id="experience" className="py-20 bg-gray-50 scroll-mt-20 relative overflow-hidden">
 			<AnimatedBlobsBackground
 				blobs={[
-					{ color: 'bg-orange-300', className: '-top-28 left-1/4 w-72 h-72' },
+					{ color: 'bg-orange-200', className: '-top-28 left-1/4 w-72 h-72' },
 					{
-						color: 'bg-blue-300',
+						color: 'bg-blue-200',
 						className: 'top-1/2 right-0 w-80 h-80 animation-delay-2000',
 						style: { transform: 'translateY(-50%)' },
 					},
-					{ color: 'bg-purple-300', className: '-bottom-28 left-1/2 w-64 h-64 animation-delay-4000' },
+					{ color: 'bg-purple-200', className: '-bottom-28 left-1/2 w-64 h-64 animation-delay-4000' },
 				]}
 			/>
 			<div className="max-w-6xl mx-auto px-2 sm:px-8 lg:px-12">

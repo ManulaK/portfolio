@@ -79,7 +79,7 @@ export function EducationSection() {
 		<AnimatedSection id="education" className="py-20 bg-white scroll-mt-20 relative overflow-hidden">
 			<AnimatedBlobsBackground
 				blobs={[
-					{ color: 'bg-indigo-300', className: '-top-24 right-1/3 w-72 h-72' },
+					{ color: 'bg-indigo-200', className: '-top-24 right-1/3 w-72 h-72' },
 					{
 						color: 'bg-teal-200',
 						className: 'top-1/2 left-0 w-80 h-80 animation-delay-2000',
