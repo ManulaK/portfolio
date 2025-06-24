@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Briefcase, MapPin, Calendar } from 'lucide-react';
 import { AnimatedSection } from '@/components/ui/animated-section';
+import { AnimatedBlobsBackground } from './ui/animated-blobs-background';
 
 const experiences = [
 	{
@@ -33,7 +34,18 @@ const experiences = [
 
 export function ExperienceSection() {
 	return (
-		<AnimatedSection id="experience" className="py-20 bg-gray-50 scroll-mt-20">
+		<AnimatedSection id="experience" className="py-20 bg-gray-50 scroll-mt-20 relative overflow-hidden">
+			<AnimatedBlobsBackground
+				blobs={[
+					{ color: 'bg-orange-300', className: '-top-28 left-1/4 w-72 h-72' },
+					{
+						color: 'bg-blue-300',
+						className: 'top-1/2 right-0 w-80 h-80 animation-delay-2000',
+						style: { transform: 'translateY(-50%)' },
+					},
+					{ color: 'bg-purple-300', className: '-bottom-28 left-1/2 w-64 h-64 animation-delay-4000' },
+				]}
+			/>
 			<div className="max-w-6xl mx-auto px-2 sm:px-8 lg:px-12">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}

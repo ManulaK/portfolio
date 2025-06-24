@@ -2,12 +2,23 @@
 
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
-import { Code, Globe, Zap, Users } from 'lucide-react';
 import { AnimatedSection } from '@/components/ui/animated-section';
+import { AnimatedBlobsBackground } from './ui/animated-blobs-background';
 
 export function AboutSection() {
 	return (
-		<AnimatedSection id="about" className="py-6 sm:py-10 md:py-16 bg-white scroll-mt-20">
+		<AnimatedSection id="about" className="py-6 sm:py-10 md:py-16 bg-white scroll-mt-20 relative overflow-hidden">
+			<AnimatedBlobsBackground
+				blobs={[
+					{ color: 'bg-blue-400', className: '-top-32 -left-32 w-72 h-72' },
+					{
+						color: 'bg-purple-400',
+						className: 'top-1/2 right-0 w-80 h-80 animation-delay-2000',
+						style: { transform: 'translateY(-50%)' },
+					},
+					{ color: 'bg-pink-400', className: '-bottom-32 left-1/3 w-64 h-64 animation-delay-4000' },
+				]}
+			/>
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
