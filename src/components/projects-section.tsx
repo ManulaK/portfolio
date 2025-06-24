@@ -65,13 +65,13 @@ export function ProjectsSection() {
 		<AnimatedSection id="projects" className="py-8 sm:py-12 md:py-20 bg-white scroll-mt-20 relative overflow-hidden">
 			<AnimatedBlobsBackground
 				blobs={[
-					{ color: 'bg-green-300', className: '-top-24 right-1/4 w-64 h-64' },
+					{ color: 'bg-green-400', className: '-top-24 right-1/4 w-64 h-64' },
 					{
-						color: 'bg-yellow-200',
+						color: 'bg-yellow-400',
 						className: 'top-1/2 left-0 w-80 h-80 animation-delay-2000',
 						style: { transform: 'translateY(-50%)' },
 					},
-					{ color: 'bg-blue-300', className: '-bottom-24 right-1/3 w-72 h-72 animation-delay-4000' },
+					{ color: 'bg-blue-400', className: '-bottom-24 right-1/3 w-72 h-72 animation-delay-4000' },
 				]}
 			/>
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -10,13 +10,9 @@ export function AboutSection() {
 		<AnimatedSection id="about" className="py-6 sm:py-10 md:py-16 bg-white scroll-mt-20 relative overflow-hidden">
 			<AnimatedBlobsBackground
 				blobs={[
-					{ color: 'bg-blue-400', className: '-top-32 -left-32 w-72 h-72' },
-					{
-						color: 'bg-purple-400',
-						className: 'top-1/2 right-0 w-80 h-80 animation-delay-2000',
-						style: { transform: 'translateY(-50%)' },
-					},
-					{ color: 'bg-pink-400', className: '-bottom-32 left-1/3 w-64 h-64 animation-delay-4000' },
+					{ color: 'bg-cyan-300', className: 'left-8 top-1/3 w-96 h-96', style: { transform: 'translateY(-50%)' } },
+					{ color: 'bg-violet-600', className: '-top-24 right-1/4 w-60 h-60 animation-delay-1000' },
+					{ color: 'bg-rose-600', className: '-bottom-20 left-1/3 w-40 h-40 animation-delay-2000' },
 				]}
 			/>
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
