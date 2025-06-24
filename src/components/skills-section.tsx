@@ -27,7 +27,7 @@ import {
 	SiGit,
 	SiGithub,
 } from 'react-icons/si';
-import { FaDatabase, FaProjectDiagram, FaCogs, FaBrain, FaRobot, FaEllipsisH, FaFigma, FaJira, FaRegKeyboard } from 'react-icons/fa';
+import { FaDatabase, FaProjectDiagram, FaCogs, FaBrain, FaRobot, FaFigma, FaJira, FaRegKeyboard } from 'react-icons/fa';
 import { AnimatedSection } from '@/components/ui/animated-section';
 
 type Skill = {
@@ -114,6 +114,8 @@ const skillGroups: SkillGroup[] = [
 			{ name: 'Android Studio', icon: SiAndroid },
 			{ name: 'Xcode', icon: SiSwift },
 			{ name: 'CI/CD Pipelines', icon: FaCogs },
+			{ name: 'Figma', icon: FaFigma },
+			{ name: 'Jira', icon: FaJira },
 		],
 	},
 	{
@@ -153,7 +155,7 @@ const skillGroups: SkillGroup[] = [
 
 export function SkillsSection() {
 	return (
-		<AnimatedSection id="skills" className="py-6 sm:py-10 md:py-16 bg-gray-50 scroll-mt-20">
+		<AnimatedSection id="skills" className="py-6 sm:py-10 md:py-16 bg-white/70 backdrop-blur-md scroll-mt-20">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
@@ -175,7 +177,7 @@ export function SkillsSection() {
 					</p>
 				</motion.div>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 min-h-0">
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 					{skillGroups.map((group, groupIdx) => (
 						<motion.div
 							key={group.title}
@@ -184,15 +186,17 @@ export function SkillsSection() {
 							transition={{ duration: 0.8, delay: groupIdx * 0.1 }}
 							viewport={{ once: true }}
 						>
-							<Card className="hover:shadow-2xl transition-all duration-300 group">
-								<CardContent className="p-6">
+							<Card className="glass-effect h-full flex flex-col shadow-xl border border-white/30 rounded-2xl group">
+								<CardContent className="p-7 flex flex-col flex-1">
 									<div className="flex items-center gap-3 mb-6">
-										<div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-											<group.icon className="w-6 h-6 text-white" />
+										<div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-md">
+											<group.icon className="w-7 h-7 text-white" />
 										</div>
-										<h3 className="text-xl font-bold">{group.title}</h3>
+										<h3 className="text-xl font-bold tracking-tight text-gray-900 group-hover:text-blue-700 transition-colors duration-300">
+											{group.title}
+										</h3>
 									</div>
-									<div className="flex flex-wrap gap-4">
+									<div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-2">
 										{group.skills.map((skill, skillIdx) => (
 											<motion.div
 												key={skill.name}
@@ -200,16 +204,23 @@ export function SkillsSection() {
 												whileInView={{ opacity: 1, scale: 1 }}
 												transition={{ duration: 0.5, delay: skillIdx * 0.05 }}
 												viewport={{ once: true }}
-												className="flex flex-col items-center gap-1 hover:scale-110 transition-transform duration-300"
+												className="flex flex-col items-center gap-2 hover:scale-110 focus:scale-110 transition-transform duration-300 cursor-pointer group"
 											>
-												{skill.icon ? (
-													<skill.icon className="w-8 h-8 mb-1" />
-												) : (
-													<span className="w-8 h-8 mb-1 flex items-center justify-center bg-gray-200 rounded-full text-gray-500">
-														?
-													</span>
-												)}
-												<span className="text-xs font-medium text-gray-700 text-center">{skill.name}</span>
+												<div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center shadow group-hover:shadow-lg transition-all duration-300">
+													{skill.icon ? (
+														<skill.icon
+															className="w-7 h-7 text-blue-700 group-hover:text-purple-700 transition-colors duration-300"
+															aria-label={skill.name}
+														/>
+													) : (
+														<span className="w-7 h-7 flex items-center justify-center bg-gray-200 rounded-full text-gray-500">
+															?
+														</span>
+													)}
+												</div>
+												<span className="text-xs font-semibold text-gray-800 text-center group-hover:text-blue-700 transition-colors duration-300">
+													{skill.name}
+												</span>
 											</motion.div>
 										))}
 									</div>
