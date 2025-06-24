@@ -91,7 +91,7 @@ export function HeroSection() {
 							View My Work
 						</a>
 						<a
-							href="/Manula Kavinda Resume 2025.pdf"
+							href="/manula_kavinda_resume_2025.pdf"
 							download
 							className="text-lg px-8 py-3 animate-bounce-once delay-150 inline-block rounded-md border border-gray-200 bg-background hover:bg-accent hover:text-accent-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 shadow-md hover:shadow-lg transition-shadow duration-300 hover:-translate-y-0.5 hover:scale-[1.03] text-center font-bold text-gray-700"
 							style={{ textDecoration: 'none' }}
