@@ -104,7 +104,6 @@ const skillGroups: SkillGroup[] = [
 		skills: [
 			{ name: 'Git', icon: SiGit },
 			{ name: 'GitHub', icon: SiGithub },
-			{ name: 'Azure DevOps', icon: FaCogs },
 			{ name: 'CI/CD Pipelines', icon: FaCogs },
 			// Add Docker, AWS, GCP, Azure if you want
 		],
@@ -129,9 +128,8 @@ const skillGroups: SkillGroup[] = [
 			{ name: 'Postman', icon: FaCogs },
 			{ name: 'Yarn', icon: FaCogs },
 			{ name: 'NPM', icon: FaCogs },
-			{ name: 'Storybook', icon: FaCogs },
-			{ name: 'Swagger', icon: FaCogs },
-			{ name: 'Confluence', icon: FaCogs },
+			{ name: 'Cursor', icon: FaCogs },
+			{ name: 'Bitbucket', icon: FaCogs },
 		],
 	},
 	{
@@ -141,7 +139,6 @@ const skillGroups: SkillGroup[] = [
 			{ name: 'Ant Design', icon: FaCogs },
 			{ name: 'Material UI (MUI)', icon: FaCogs },
 			{ name: 'Tailwind CSS', icon: FaCogs },
-			{ name: 'Bootstrap', icon: FaCogs },
 			{ name: 'Figma', icon: FaFigma },
 			{ name: 'shadcn/ui', icon: FaCogs },
 			{ name: 'Charaka', icon: FaCogs },
@@ -163,7 +160,6 @@ const skillGroups: SkillGroup[] = [
 			{ name: 'Jira', icon: FaJira },
 			{ name: 'Agile (Scrum/Kanban)', icon: FaProjectDiagram },
 			{ name: 'SDLC', icon: FaProjectDiagram },
-			{ name: 'Project Management Tools (Jira, Trello)', icon: FaJira },
 		],
 	},
 	{
@@ -223,7 +219,7 @@ export function SkillsSection() {
 											{group.title}
 										</h3>
 									</div>
-									<div className="grid grid-cols-2 sm:grid-cols-2 gap-2 mt-1">
+									<div className="grid grid-cols-3 sm:grid-cols-3 gap-2 mt-1">
 										{group.skills.map((skill, skillIdx) => (
 											<motion.div
 												key={skill.name}
