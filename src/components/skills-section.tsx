@@ -61,6 +61,8 @@ const skillGroups: SkillGroup[] = [
 		title: 'Web Frameworks & Libraries',
 		icon: FaCogs,
 		skills: [
+			{ name: 'HTML', icon: SiHtml5 },
+			{ name: 'CSS', icon: SiCss3 },
 			{ name: 'ReactJS', icon: SiReact },
 			{ name: 'Next.js', icon: SiNextdotjs },
 			{ name: 'Node.js', icon: SiNodedotjs },
