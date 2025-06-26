@@ -48,17 +48,17 @@ const skillGroups: SkillGroup[] = [
 		skills: [
 			{ name: 'JavaScript', icon: SiJavascript },
 			{ name: 'TypeScript', icon: SiTypescript },
+			{ name: 'Python', icon: SiPython },
 			{ name: 'Java', icon: FaBrain },
 			{ name: 'Kotlin', icon: FaBrain },
-			{ name: 'Python', icon: SiPython },
-			{ name: 'Swift', icon: SiSwift },
 			{ name: 'Dart', icon: SiDart },
-			{ name: 'SQL', icon: SiMysql },
+			{ name: 'Swift', icon: SiSwift },
 			{ name: 'C#', icon: SiDotnet },
+			{ name: 'SQL', icon: SiMysql },
 		],
 	},
 	{
-		title: 'Frameworks & Technologies',
+		title: 'Web Frameworks & Libraries',
 		icon: FaCogs,
 		skills: [
 			{ name: 'ReactJS', icon: SiReact },
@@ -66,30 +66,24 @@ const skillGroups: SkillGroup[] = [
 			{ name: 'Node.js', icon: SiNodedotjs },
 			{ name: 'Express.js', icon: SiExpress },
 			{ name: '.NET', icon: SiDotnet },
-			{ name: 'Flutter', icon: SiFlutter },
-			{ name: 'Android SDK', icon: SiAndroid },
-			{ name: 'SwiftUI', icon: SiSwift },
 			{ name: 'Flask', icon: SiFlask },
 			{ name: 'Strapi', icon: FaCogs },
+			{ name: 'GraphQL', icon: SiGraphql },
+			{ name: 'RESTful APIs', icon: FaProjectDiagram },
+			{ name: 'WebSockets', icon: SiSocketdotio },
 			{ name: 'LangChain', icon: FaRobot },
 			{ name: 'Prisma', icon: FaDatabase },
-			{ name: 'HTML', icon: SiHtml5 },
-			{ name: 'CSS', icon: SiCss3 },
-			{ name: 'RESTful APIs', icon: FaProjectDiagram },
-			{ name: 'GraphQL', icon: SiGraphql },
-			{ name: 'WebSockets', icon: SiSocketdotio },
 		],
 	},
 	{
-		title: 'Frontend UI Libraries',
-		icon: FaCogs,
+		title: 'Mobile Development',
+		icon: SiAndroid,
 		skills: [
-			{ name: 'Ant Design', icon: FaCogs },
-			{ name: 'shadcn/ui', icon: FaCogs },
-			{ name: 'Charaka', icon: FaCogs },
-			{ name: 'Material UI (MUI)', icon: FaCogs },
-			{ name: 'Tailwind CSS', icon: FaCogs },
-			{ name: 'Bootstrap', icon: FaCogs },
+			{ name: 'Flutter', icon: SiFlutter },
+			{ name: 'Android SDK', icon: SiAndroid },
+			{ name: 'SwiftUI', icon: SiSwift },
+			{ name: 'Xcode', icon: SiSwift },
+			{ name: 'Android Studio', icon: SiAndroid },
 		],
 	},
 	{
@@ -103,30 +97,70 @@ const skillGroups: SkillGroup[] = [
 		],
 	},
 	{
-		title: 'Tools & Platforms',
-		icon: FaProjectDiagram,
+		title: 'DevOps & Cloud',
+		icon: FaCogs,
 		skills: [
 			{ name: 'Git', icon: SiGit },
 			{ name: 'GitHub', icon: SiGithub },
 			{ name: 'Azure DevOps', icon: FaCogs },
-			{ name: 'Postman', icon: FaCogs },
-			{ name: 'VS Code', icon: FaRegKeyboard },
-			{ name: 'Android Studio', icon: SiAndroid },
-			{ name: 'Xcode', icon: SiSwift },
 			{ name: 'CI/CD Pipelines', icon: FaCogs },
-			{ name: 'Figma', icon: FaFigma },
-			{ name: 'Jira', icon: FaJira },
+			// Add Docker, AWS, GCP, Azure if you want
 		],
 	},
 	{
-		title: 'DevOps & Project Practices',
+		title: 'Testing & Quality',
 		icon: FaCogs,
 		skills: [
-			{ name: 'Agile (Scrum/Kanban)', icon: FaProjectDiagram },
-			{ name: 'DevOps Principles', icon: FaCogs },
-			{ name: 'SDLC', icon: FaProjectDiagram },
-			{ name: 'Test-Driven Development (TDD)', icon: FaCogs },
+			{ name: 'Jest', icon: FaCogs },
+			{ name: 'Cypress', icon: FaCogs },
+			{ name: 'ESLint', icon: FaCogs },
+			{ name: 'Prettier', icon: FaCogs },
 			{ name: 'Code Reviews', icon: FaCogs },
+			{ name: 'Test-Driven Development (TDD)', icon: FaCogs },
+		],
+	},
+	{
+		title: 'Tools & Platforms',
+		icon: FaProjectDiagram,
+		skills: [
+			{ name: 'VS Code', icon: FaRegKeyboard },
+			{ name: 'Postman', icon: FaCogs },
+			{ name: 'Yarn', icon: FaCogs },
+			{ name: 'NPM', icon: FaCogs },
+			{ name: 'Storybook', icon: FaCogs },
+			{ name: 'Swagger', icon: FaCogs },
+			{ name: 'Confluence', icon: FaCogs },
+		],
+	},
+	{
+		title: 'UI/UX & Design',
+		icon: FaFigma,
+		skills: [
+			{ name: 'Ant Design', icon: FaCogs },
+			{ name: 'Material UI (MUI)', icon: FaCogs },
+			{ name: 'Tailwind CSS', icon: FaCogs },
+			{ name: 'Bootstrap', icon: FaCogs },
+			{ name: 'Figma', icon: FaFigma },
+			{ name: 'shadcn/ui', icon: FaCogs },
+			{ name: 'Charaka', icon: FaCogs },
+		],
+	},
+	{
+		title: 'AI & Machine Learning',
+		icon: FaRobot,
+		skills: [
+			{ name: 'Integration of LLMs & RAG', icon: FaRobot },
+			{ name: 'AI-assisted development', icon: FaRobot },
+			{ name: 'Prompt engineering', icon: FaRobot },
+		],
+	},
+	{
+		title: 'Project Management & Practices',
+		icon: FaJira,
+		skills: [
+			{ name: 'Jira', icon: FaJira },
+			{ name: 'Agile (Scrum/Kanban)', icon: FaProjectDiagram },
+			{ name: 'SDLC', icon: FaProjectDiagram },
 			{ name: 'Project Management Tools (Jira, Trello)', icon: FaJira },
 		],
 	},
@@ -140,15 +174,6 @@ const skillGroups: SkillGroup[] = [
 			{ name: 'Software Design Patterns', icon: FaBrain },
 			{ name: 'System Architecture', icon: FaBrain },
 			{ name: 'Microservices', icon: FaBrain },
-		],
-	},
-	{
-		title: 'AI & Modern Tech',
-		icon: FaRobot,
-		skills: [
-			{ name: 'Integration of LLMs & RAG', icon: FaRobot },
-			{ name: 'AI-assisted development', icon: FaRobot },
-			{ name: 'Prompt engineering', icon: FaRobot },
 		],
 	},
 ];
@@ -177,7 +202,7 @@ export function SkillsSection() {
 					</p>
 				</motion.div>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 					{skillGroups.map((group, groupIdx) => (
 						<motion.div
 							key={group.title}
@@ -187,16 +212,16 @@ export function SkillsSection() {
 							viewport={{ once: true }}
 						>
 							<Card className="glass-effect h-full flex flex-col shadow-xl border border-white/30 rounded-2xl group">
-								<CardContent className="p-7 flex flex-col flex-1">
-									<div className="flex items-center gap-3 mb-6">
-										<div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-md">
-											<group.icon className="w-7 h-7 text-white" />
+								<CardContent className="p-5 flex flex-col flex-1">
+									<div className="flex items-center gap-2 mb-4">
+										<div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-200 shadow-md">
+											<group.icon className="w-5 h-5 text-white" />
 										</div>
-										<h3 className="text-xl font-bold tracking-tight text-gray-900 group-hover:text-blue-700 transition-colors duration-300">
+										<h3 className="text-lg font-semibold tracking-tight text-gray-900 group-hover:text-blue-700 transition-colors duration-200">
 											{group.title}
 										</h3>
 									</div>
-									<div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-2">
+									<div className="grid grid-cols-2 sm:grid-cols-2 gap-2 mt-1">
 										{group.skills.map((skill, skillIdx) => (
 											<motion.div
 												key={skill.name}
@@ -204,21 +229,21 @@ export function SkillsSection() {
 												whileInView={{ opacity: 1, scale: 1 }}
 												transition={{ duration: 0.5, delay: skillIdx * 0.05 }}
 												viewport={{ once: true }}
-												className="flex flex-col items-center gap-2 hover:scale-110 focus:scale-110 transition-transform duration-300 cursor-pointer group"
+												className="flex flex-col items-center gap-0.5 hover:scale-105 focus:scale-105 transition-transform duration-200 cursor-pointer group"
 											>
-												<div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center shadow group-hover:shadow-lg transition-all duration-300">
+												<div className="w-7 h-7 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center shadow group-hover:shadow-md transition-all duration-200">
 													{skill.icon ? (
 														<skill.icon
-															className="w-7 h-7 text-blue-700 group-hover:text-purple-700 transition-colors duration-300"
+															className="w-4 h-4 text-black group-hover:text-gray-700 transition-colors duration-200"
 															aria-label={skill.name}
 														/>
 													) : (
-														<span className="w-7 h-7 flex items-center justify-center bg-gray-200 rounded-full text-gray-500">
+														<span className="w-4 h-4 flex items-center justify-center bg-gray-200 rounded-full text-gray-500">
 															?
 														</span>
 													)}
 												</div>
-												<span className="text-xs font-semibold text-gray-800 text-center group-hover:text-blue-700 transition-colors duration-300">
+												<span className="text-[10px] font-medium text-black text-center group-hover:text-gray-700 transition-colors duration-200">
 													{skill.name}
 												</span>
 											</motion.div>
