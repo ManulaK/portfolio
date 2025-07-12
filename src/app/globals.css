@@ -98,6 +98,36 @@ html {
 	box-shadow: 0 4px 32px 0 rgba(31, 38, 135, 0.12);
 }
 
+/* Masonry layout improvements */
+.masonry-container {
+	column-fill: balance;
+	will-change: transform;
+}
+
+.masonry-item {
+	display: block;
+	break-inside: avoid;
+	page-break-inside: avoid;
+	transform: translateZ(0);
+	will-change: transform, height;
+}
+
+/* Smooth height transitions for project cards */
+.project-card {
+	transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+	transform: translateZ(0);
+	will-change: transform, height;
+}
+
+.project-card-expanding {
+	transition: height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Prevent layout shifts during animations */
+.project-card * {
+	transform: translateZ(0);
+}
+
 /* Custom shimmer and glow animations for Hero section */
 @keyframes shimmer {
 	0% {

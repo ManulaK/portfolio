@@ -64,7 +64,7 @@ export function ExperienceSection() {
 					{ color: 'bg-purple-200', className: '-bottom-28 left-1/2 w-64 h-64 animation-delay-4000' },
 				]}
 			/>
-			<div className="max-w-6xl mx-auto px-2 sm:px-8 lg:px-12">
+			<div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}

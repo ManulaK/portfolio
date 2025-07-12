@@ -15,7 +15,7 @@ export function AboutSection() {
 					{ color: 'bg-rose-200', className: '-bottom-20 left-1/3 w-40 h-40 animation-delay-2000' },
 				]}
 			/>
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}

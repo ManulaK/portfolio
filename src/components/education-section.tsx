@@ -66,7 +66,7 @@ const education = [
 	},
 	{
 		degree: 'GCE Ordinary Level',
-		institution: "St. Peter's College",
+		institution: "St. Peter's College ",
 		location: 'Negombo, Sri Lanka',
 		year: '2016',
 		extra: 'Medium: English',
@@ -93,7 +93,7 @@ export function EducationSection() {
 					{ color: 'bg-pink-200', className: '-bottom-24 right-1/4 w-64 h-64 animation-delay-4000' },
 				]}
 			/>
-			<div className="max-w-7xl mx-auto px-2 sm:px-8 lg:px-12">
+			<div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}

@@ -25,7 +25,7 @@ export function HeroSection() {
 				<div className="absolute top-40 left-40 w-80 h-80 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
 			</div>
 
-			<div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div className="relative z-10 text-center max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 				<motion.div
 					initial="hidden"
 					animate="visible"
