@@ -40,6 +40,7 @@ const projects = [
 			{ name: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.orelit.simpli5' },
 			{ name: 'App Store', url: 'https://apps.apple.com/us/app/iorel/id6468539240' },
 		],
+		type: 'INDUSTRY',
 	},
 	{
 		title: 'Global E-Shop Web Application',
@@ -71,8 +72,9 @@ const projects = [
 		images: null, // Coming soon
 		links: [
 			{ name: 'Sri Lanka Shop', url: 'https://shop.orel.com' },
-			{ name: 'Mobile App', url: 'https://play.google.com/store/apps/details?id=com.iorel.cashback&hl=en' },
+			{ name: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.iorel.cashback&hl=en' },
 		],
+		type: 'INDUSTRY',
 	},
 	{
 		title: '"SENZES" - AI-Powered Mobile Application for Hearing-Impaired Community',
@@ -98,6 +100,7 @@ const projects = [
 			{ name: 'Project Website', url: 'https://senzes-web.vercel.app/' },
 			{ name: 'Mobile App GitHub', url: 'https://github.com/CodeBrigade404/SENZES_APP.git' },
 		],
+		type: 'ACADEMIC',
 	},
 	{
 		title: 'Retrieval Augmented Generation (RAG) Based Communication Helper Assistant',
@@ -108,6 +111,7 @@ const projects = [
 		technologies: ['Python', 'LangChain', 'OpenAI API', 'Vector databases', 'FastAPI', 'REST APIs', 'MongoDB'],
 		images: null, // Coming soon
 		links: [{ name: 'GitHub', url: 'https://github.com/CodeBrigade404/openai_communication_helper_assistant.git' }],
+		type: 'ACADEMIC',
 	},
 	{
 		title: 'Enterprise E-Commerce Android Application',
@@ -118,6 +122,7 @@ const projects = [
 		technologies: ['Android SDK', 'Kotlin', 'Jetpack Compose', 'MVVM', 'Material Design 3', 'REST APIs'],
 		images: null, // Coming soon
 		links: [{ name: 'GitHub', url: 'https://github.com/CodeBrigade404/EMA_for_EAD.git' }],
+		type: 'ACADEMIC',
 	},
 	{
 		title: '"DinoAR" - Mobile Application Enhanced by Augmented Reality',
@@ -128,6 +133,7 @@ const projects = [
 		technologies: ['Flutter', 'Dart', 'AR Technology', 'ARKit', 'ARCore'],
 		images: null, // Coming soon
 		links: [{ name: 'GitHub', url: 'https://github.com/ManulaK/dino_ar.git' }],
+		type: 'ACADEMIC',
 	},
 	{
 		title: '"EventMania" - Event Booking & Organizing iOS Application',
@@ -138,6 +144,7 @@ const projects = [
 		technologies: ['Swift', 'SwiftUI', 'Core Data', 'EventKit', 'Push notifications', 'iOS SDK'],
 		images: null, // Coming soon
 		links: [{ name: 'GitHub', url: 'https://github.com/ManulaK/EventMania.git' }],
+		type: 'ACADEMIC',
 	},
 	{
 		title: '"LittleDeveloper" - Learning Management iOS Application',
@@ -148,6 +155,7 @@ const projects = [
 		technologies: ['Swift', 'UIKit', 'Core Data', 'GameKit', 'Educational APIs', 'iOS SDK'],
 		images: null, // Coming soon
 		links: [{ name: 'GitHub', url: 'https://github.com/ManulaK/LittleDeveloper.git' }],
+		type: 'ACADEMIC',
 	},
 	{
 		title: '"HealthCart" - Apple WatchOS Application',
@@ -158,6 +166,7 @@ const projects = [
 		technologies: ['Swift', 'WatchKit', 'HealthKit', 'Core Motion', 'CloudKit', 'watchOS SDK'],
 		images: null, // Coming soon
 		links: [{ name: 'GitHub', url: 'https://github.com/ManulaK/HealthCart.git' }],
+		type: 'ACADEMIC',
 	},
 	{
 		title: '"QranLingo" - Quran Learning Management Mobile Application',
@@ -167,6 +176,7 @@ const projects = [
 			'Mobile application for Quran learning with audio recitation and progress tracking. Built with Flutter and Dart for cross-platform development during internship. Features Arabic text display, audio recitation, progress tracking, interactive lessons, and child-friendly interface designed specifically for Arabic children learning Quran.',
 		technologies: ['Flutter', 'Dart', 'Firebase', 'Audio processing', 'Arabic UI'],
 		images: null, // Coming soon
+		type: 'INDUSTRY',
 	},
 	{
 		title: '"Gas Measuring App" - Car RPM & Fuel Monitoring Application',
@@ -177,6 +187,7 @@ const projects = [
 		technologies: ['Flutter', 'Dart', 'Firebase', 'Real-time Data', 'Dashboard UI', 'Automotive APIs'],
 		images: null, // Coming soon
 		links: [{ name: 'GitHub', url: 'https://github.com/ManulaK/gas_measuring_app.git' }],
+		type: 'FREELANCE',
 	},
 	{
 		title: '"Ceylon Explorer" - Tourism Booking Website',
@@ -190,6 +201,7 @@ const projects = [
 			{ name: 'GitHub', url: 'https://github.com/ManulaK/ceylon-explorer-v1.git' },
 			{ name: 'Live Demo', url: 'https://ceylon-explorer-v1-j36k.vercel.app' },
 		],
+		type: 'FREELANCE',
 	},
 ];
 
@@ -228,65 +240,93 @@ const ComingSoonImage = () => (
 				<p className="text-blue-400 text-xs">Project images will be added soon</p>
 			</div>
 		</div>
-		<motion.div
-			animate={{
-				opacity: [0.3, 0.6, 0.3],
-				scale: [1, 1.05, 1],
-			}}
-			transition={{
-				duration: 2,
-				repeat: Infinity,
-				ease: 'easeInOut',
-			}}
-			className="absolute top-2 right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded-full font-medium"
-		>
-			NEW
-		</motion.div>
 	</motion.div>
 );
 
 // Platform Icon Component
 const PlatformIcon = ({ platform }: { platform: string }) => {
 	const getIcon = () => {
-		switch (platform.toLowerCase()) {
-			case 'web app':
-				return (
-					<svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path
-							strokeLinecap="round"
-							strokeLinejoin="round"
-							strokeWidth={2}
-							d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9m0-9c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"
-						/>
-					</svg>
-				);
-			case 'google play':
-				return (
-					<svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-						<path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
-					</svg>
-				);
-			case 'app store':
-				return (
-					<svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-						<path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z" />
-					</svg>
-				);
-			default:
-				return (
-					<svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path
-							strokeLinecap="round"
-							strokeLinejoin="round"
-							strokeWidth={2}
-							d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-						/>
-					</svg>
-				);
+		const platformLower = platform.toLowerCase();
+
+		// GitHub links
+		if (platformLower.includes('github')) {
+			return (
+				<svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+					<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+				</svg>
+			);
 		}
+
+		// Google Play Store links
+		if (platformLower.includes('play') || platformLower.includes('google play')) {
+			return (
+				<svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+					<path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+				</svg>
+			);
+		}
+
+		// App Store links
+		if (platformLower.includes('app store') || platformLower.includes('appstore')) {
+			return (
+				<svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+					<path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z" />
+				</svg>
+			);
+		}
+
+		// Default generic link icon
+		return (
+			<svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<path
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					strokeWidth={2}
+					d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+				/>
+			</svg>
+		);
 	};
 
 	return getIcon();
+};
+
+// Project Type Tag Component
+const ProjectTypeTag = ({ type }: { type: string }) => {
+	const getTagClass = () => {
+		switch (type) {
+			case 'INDUSTRY':
+				return 'bg-red-100 text-red-800';
+			case 'ACADEMIC':
+				return 'bg-green-100 text-green-800';
+			case 'FREELANCE':
+				return 'bg-orange-100 text-orange-800';
+			default:
+				return 'bg-gray-100 text-gray-800';
+		}
+	};
+
+	const getTooltip = () => {
+		switch (type) {
+			case 'INDUSTRY':
+				return 'Professional/Industry Project';
+			case 'ACADEMIC':
+				return 'University/Academic Project';
+			case 'FREELANCE':
+				return 'Freelance/Client Project';
+			default:
+				return '';
+		}
+	};
+
+	return (
+		<span
+			title={getTooltip()}
+			className={`px-3 py-1 rounded-full text-xs font-medium ${getTagClass()} transition-all duration-200 cursor-default select-none`}
+		>
+			{type.charAt(0) + type.slice(1).toLowerCase()}
+		</span>
+	);
 };
 
 // Project Image Gallery Component
@@ -379,23 +419,15 @@ const ProjectCard = ({ project, idx }: { project: any; idx: number }) => {
 	}, [isHovered]);
 
 	return (
-		<motion.div
-			initial={{ opacity: 0, y: 40 }}
-			whileInView={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.7, delay: idx * 0.1 }}
-			viewport={{ once: true }}
-			whileHover={{ scale: 1.02 }}
-			onHoverStart={() => setIsHovered(true)}
-			onHoverEnd={() => setIsHovered(false)}
-		>
-			<Card className="project-card flex flex-col p-6 hover:shadow-2xl transition-all duration-500 ease-out">
-				<CardContent ref={cardRef} className="flex-1 flex flex-col">
+		<div onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+			<Card className="project-card flex flex-col p-4 sm:p-5 lg:p-6 hover:shadow-2xl transition-all duration-500 ease-out">
+				<CardContent ref={cardRef} className="flex-1 flex flex-col p-0">
 					{/* Project Image */}
-					<div className="mb-4">{project.images ? <ProjectImageGallery images={project.images} /> : <ComingSoonImage />}</div>
+					<div className="mb-5">{project.images ? <ProjectImageGallery images={project.images} /> : <ComingSoonImage />}</div>
 
 					{/* Project Header - Always Visible */}
-					<div className="mb-4 flex-1">
-						<h3 className="text-md font-bold mb-1">
+					<div className="mb-5 flex-1">
+						<h3 className="text-lg font-bold mb-2">
 							{project.url ? (
 								<a
 									href={project.url}
@@ -409,11 +441,14 @@ const ProjectCard = ({ project, idx }: { project: any; idx: number }) => {
 								project.title
 							)}
 						</h3>
-						<div className="text-sm font-medium text-gray-700 mb-2">{project.organization}</div>
+						<div className="flex items-center gap-2 mb-3">
+							<div className="text-sm font-medium text-gray-700">{project.organization}</div>
+							<ProjectTypeTag type={project.type} />
+						</div>
 
 						{/* Short Description - Always Visible with Read More */}
 						<motion.div
-							className="mb-3"
+							className="mb-4"
 							animate={{
 								height: 'auto',
 								opacity: 1,
@@ -433,7 +468,7 @@ const ProjectCard = ({ project, idx }: { project: any; idx: number }) => {
 							{project.description.split('.').length > 1 && (
 								<motion.button
 									onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}
-									className="text-xs text-blue-600 hover:text-blue-700 font-medium mt-1 transition-colors duration-200"
+									className="text-xs text-blue-600 hover:text-blue-700 font-medium mt-2 transition-colors duration-200"
 									whileHover={{ scale: 1.05 }}
 									whileTap={{ scale: 0.95 }}
 									animate={{ opacity: isHovered ? 0 : 1 }}
@@ -447,7 +482,7 @@ const ProjectCard = ({ project, idx }: { project: any; idx: number }) => {
 						{/* Technologies - Always Visible with Expand */}
 						{project.technologies && (
 							<motion.div
-								className="mb-3"
+								className="mb-4"
 								animate={{
 									height: 'auto',
 									opacity: 1,
@@ -455,7 +490,7 @@ const ProjectCard = ({ project, idx }: { project: any; idx: number }) => {
 								transition={{ duration: 0.4, ease: 'easeOut' }}
 							>
 								<motion.div
-									className="flex flex-wrap gap-1"
+									className="flex flex-wrap gap-1.5"
 									animate={{
 										opacity: 1,
 										y: 0,
@@ -465,7 +500,7 @@ const ProjectCard = ({ project, idx }: { project: any; idx: number }) => {
 									{project.technologies.slice(0, 3).map((tech: string, techIdx: number) => (
 										<motion.span
 											key={techIdx}
-											className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full font-medium"
+											className="px-2.5 py-1 bg-blue-100 text-blue-800 text-xs rounded-full font-medium"
 											whileHover={{ scale: 1.05, y: -1 }}
 											transition={{ duration: 0.2 }}
 										>
@@ -475,7 +510,7 @@ const ProjectCard = ({ project, idx }: { project: any; idx: number }) => {
 									{!isTechStackExpanded && project.technologies.length > 3 && (
 										<motion.button
 											onClick={() => setIsTechStackExpanded(true)}
-											className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full font-medium hover:bg-gray-200 transition-colors duration-200"
+											className="px-2.5 py-1 bg-gray-100 text-gray-600 text-xs rounded-full font-medium hover:bg-gray-200 transition-colors duration-200"
 											whileHover={{ scale: 1.05 }}
 											whileTap={{ scale: 0.95 }}
 											animate={{ opacity: isHovered ? 0 : 1 }}
@@ -488,7 +523,7 @@ const ProjectCard = ({ project, idx }: { project: any; idx: number }) => {
 										project.technologies.slice(3).map((tech: string, techIdx: number) => (
 											<motion.span
 												key={techIdx + 3}
-												className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full font-medium"
+												className="px-2.5 py-1 bg-blue-100 text-blue-800 text-xs rounded-full font-medium"
 												initial={{ opacity: 0, scale: 0.8 }}
 												animate={{ opacity: 1, scale: 1 }}
 												transition={{ duration: 0.3, delay: techIdx * 0.05 }}
@@ -500,7 +535,7 @@ const ProjectCard = ({ project, idx }: { project: any; idx: number }) => {
 									{isTechStackExpanded && project.technologies.length > 3 && (
 										<motion.button
 											onClick={() => setIsTechStackExpanded(false)}
-											className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full font-medium hover:bg-gray-200 transition-colors duration-200"
+											className="px-2.5 py-1 bg-gray-100 text-gray-600 text-xs rounded-full font-medium hover:bg-gray-200 transition-colors duration-200"
 											whileHover={{ scale: 1.05 }}
 											whileTap={{ scale: 0.95 }}
 											animate={{ opacity: isHovered ? 0 : 1 }}
@@ -516,7 +551,7 @@ const ProjectCard = ({ project, idx }: { project: any; idx: number }) => {
 						{/* Platform Links - Always Visible */}
 						{project.links && (
 							<motion.div
-								className="flex flex-wrap gap-2"
+								className="flex flex-wrap gap-2.5"
 								animate={{
 									opacity: 1,
 									y: 0,
@@ -529,7 +564,7 @@ const ProjectCard = ({ project, idx }: { project: any; idx: number }) => {
 										href={link.url}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="inline-flex items-center gap-1.5 text-xs bg-gradient-to-r from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 text-gray-700 px-3 py-1.5 rounded-full transition-all duration-200 border border-blue-200 hover:border-blue-300 hover:shadow-sm"
+										className="inline-flex items-center gap-1.5 text-xs bg-gradient-to-r from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 text-gray-700 px-3 py-2 rounded-full transition-all duration-200 border border-blue-200 hover:border-blue-300 hover:shadow-sm"
 										whileHover={{ scale: 1.05, y: -2 }}
 										whileTap={{ scale: 0.95 }}
 										initial={{ opacity: 0, y: 10 }}
@@ -628,7 +663,7 @@ const ProjectCard = ({ project, idx }: { project: any; idx: number }) => {
 					</div>
 				)}
 			</Card>
-		</motion.div>
+		</div>
 	);
 };
 
@@ -667,10 +702,20 @@ export function ProjectsSection() {
 					</p>
 				</motion.div>
 
-				{/* Masonry-style layout with smooth transitions */}
-				<div className="masonry-container columns-1 md:columns-2 xl:columns-3 gap-6 sm:gap-8 md:gap-10 space-y-6 sm:space-y-8 md:space-y-10">
+				{/* Project Type Legend */}
+				<div className="flex flex-wrap items-center justify-center gap-4 mb-10">
+					<span className="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-medium">Industry</span>
+					<span className="text-sm text-gray-500">Professional/Industry Project</span>
+					<span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">Academic</span>
+					<span className="text-sm text-gray-500">University/Academic Project</span>
+					<span className="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-xs font-medium">Freelance</span>
+					<span className="text-sm text-gray-500">Freelance/Client Project</span>
+				</div>
+
+				{/* Grid layout in index order */}
+				<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10 xl:gap-12">
 					{projects.map((project, idx) => (
-						<div key={project.title} className="masonry-item mb-6 sm:mb-8 md:mb-10">
+						<div key={project.title} className="p-2">
 							<ProjectCard project={project} idx={idx} />
 						</div>
 					))}

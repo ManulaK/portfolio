@@ -53,7 +53,9 @@ export function AboutSection() {
 										Full-Stack & Mobile
 									</span>
 									<span className="px-3 py-1 bg-purple-100 rounded-full text-xs font-medium">Agile & DevOps</span>
-									<span className="px-3 py-1 bg-yellow-100 rounded-full text-xs font-medium">Continuous Learner</span>
+									<span className="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-xs font-medium">
+										Continuous Learner
+									</span>
 								</div>
 							</CardContent>
 						</Card>
