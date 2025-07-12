@@ -11,52 +11,72 @@ const projects = [
 		organization: 'Orel Corporation Sri Lanka',
 		url: 'https://i.orel.com',
 		date: 'October 2023 - January 2025',
+		description: 'Enterprise-level application software for business management and operations.',
+		technologies: ['ReactJS', 'Node.js', 'TypeScript', 'Express.js', 'MongoDB'],
 	},
 	{
 		title: 'Global E-Shop Web Application',
 		organization: 'Orel Corporation Sri Lanka',
 		url: 'https://shop.orel.com',
 		date: 'December 2024 - January 2025',
+		description: 'E-commerce platform for global retail operations with payment integration.',
+		technologies: ['Next.js', 'TypeScript', 'Stripe', 'PostgreSQL', 'Tailwind CSS'],
 	},
 	{
 		title: '"SENSEZ" - Mobile Application for Hard of Hearing Community',
 		organization: 'Sri Lanka Institute of Information Technology',
 		date: 'January 2024 - November 2024',
+		description: 'Mobile app to improve environmental awareness for hard of hearing individuals using real-time data.',
+		technologies: ['Flutter', 'Dart', 'Firebase', 'Google Maps API', 'Real-time sensors'],
 	},
 	{
 		title: 'Retrieval Augmented Generation (RAG) Based Communication Helper Assistant',
 		organization: 'Sri Lanka Institute of Information Technology',
 		date: 'January 2024 - November 2024',
+		description: 'AI-powered communication assistant using RAG technology for enhanced user interactions.',
+		technologies: ['Python', 'LangChain', 'OpenAI API', 'Vector databases', 'React'],
 	},
 	{
 		title: 'Enterprise E-Commerce Android Application',
 		organization: 'Sri Lanka Institute of Information Technology',
 		date: 'September 2024 - October 2024',
+		description: 'Android-based e-commerce application with payment processing and inventory management.',
+		technologies: ['Android SDK', 'Kotlin', 'Java', 'SQLite', 'REST APIs'],
 	},
 	{
 		title: '"DinoAR" - Mobile Application Enhanced by Augmented Reality',
 		organization: 'Sri Lanka Institute of Information Technology',
 		date: 'May 2024 - June 2024',
+		description: 'Educational mobile app with AR features for interactive dinosaur learning experiences.',
+		technologies: ['Unity', 'C#', 'ARKit', 'ARCore', '3D modeling'],
 	},
 	{
-		title: '"EventMania" - Event Booking & Organizing IOS Application',
+		title: '"EventMania" - Event Booking & Organizing iOS Application',
 		organization: 'Sri Lanka Institute of Information Technology',
 		date: 'April 2024 - May 2024',
+		description: 'iOS application for event booking and management with calendar integration.',
+		technologies: ['Swift', 'SwiftUI', 'Core Data', 'EventKit', 'Push notifications'],
 	},
 	{
-		title: '"LittleDeveloper" - Learning Management IOS Application',
+		title: '"LittleDeveloper" - Learning Management iOS Application',
 		organization: 'Sri Lanka Institute of Information Technology',
 		date: 'May 2024 - June 2024',
+		description: 'Educational platform for teaching programming concepts to children.',
+		technologies: ['Swift', 'UIKit', 'Core Data', 'GameKit', 'Educational APIs'],
 	},
 	{
 		title: '"HealthCart" - Apple WatchOS Application',
 		organization: 'Sri Lanka Institute of Information Technology',
 		date: 'May 2024 - June 2024',
+		description: 'Health monitoring application for Apple Watch with fitness tracking features.',
+		technologies: ['Swift', 'WatchKit', 'HealthKit', 'Core Motion', 'CloudKit'],
 	},
 	{
 		title: '"QranLingo" - Quran Learning Management Mobile Application',
 		organization: 'Axcer Innovations Sri Lanka',
 		date: 'April 2023 - August 2023',
+		description: 'Mobile application for Quran learning with audio recitation and progress tracking.',
+		technologies: ['Flutter', 'Dart', 'Firebase', 'Audio processing', 'SQLite'],
 	},
 ];
 
@@ -106,7 +126,7 @@ export function ProjectsSection() {
 						>
 							<Card className="h-full flex flex-col p-6 hover:shadow-2xl transition-shadow duration-300">
 								<CardContent className="mb-3">
-									<h3 className="text-lg font-bold mb-1">
+									<h3 className="text-lg font-bold mb-2">
 										{project.url ? (
 											<a
 												href={project.url}
@@ -120,8 +140,23 @@ export function ProjectsSection() {
 											project.title
 										)}
 									</h3>
-									<div className="text-sm font-medium mb-1">{project.organization}</div>
-									<div className="text-xs text-gray-500">{project.date}</div>
+									<div className="text-sm font-medium mb-2">{project.organization}</div>
+									{project.description && (
+										<p className="text-sm text-gray-600 mb-3 leading-relaxed">{project.description}</p>
+									)}
+									{project.technologies && (
+										<div className="flex flex-wrap gap-1 mb-2">
+											{project.technologies.map((tech, techIdx) => (
+												<span
+													key={techIdx}
+													className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full font-medium"
+												>
+													{tech}
+												</span>
+											))}
+										</div>
+									)}
+									<div className="text-xs text-gray-500 mt-auto">{project.date}</div>
 								</CardContent>
 							</Card>
 						</motion.div>

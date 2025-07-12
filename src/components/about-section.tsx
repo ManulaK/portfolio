@@ -31,39 +31,33 @@ export function AboutSection() {
 					>
 						About Me
 					</motion.h2>
-					<div className="flex justify-center mb-8">
-						<motion.div whileHover={{ scale: 1.03, rotate: -1 }} transition={{ type: 'spring', stiffness: 300 }}>
-							<Card className="max-w-4xl text-left">
-								<CardContent>
-									<h3 className="text-2xl font-bold mb-2 pt-4 pb-2 sm:pt-0 sm:pb-0">Professional Summary</h3>
-									<p className="text-lg mb-2">
-										Versatile Software Engineer with nearly 2 years of progressive experience as an intern, trainee, and
-										associate. Proficiency in mobile and full-stack application development, producing reliable software
-										solutions that prioritize user expectations. Demonstrates skills in JavaScript, Java, Python, and
-										various technologies, including ReactJS, NodeJS, Flutter, and Android. Effectively applies agile
-										methodologies and DevOps practices. Proven ability to troubleshoot and resolve software defects,
-										ensuring smooth operations. Adept at continuous learning and staying updated on best practices in
-										software development. Seeking to use technical experience and innovative problem-solving abilities
-										to drive successful projects in a collaborative environment.
-									</p>
-									<div className="flex flex-wrap gap-2 mt-2">
-										<span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
-											2 Years Experience
-										</span>
-										<span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">
-											Full-Stack & Mobile
-										</span>
-										<span className="px-3 py-1 bg-purple-100 rounded-full text-xs font-medium">Agile & DevOps</span>
-										<span className="px-3 py-1 bg-yellow-100 rounded-full text-xs font-medium">Continuous Learner</span>
-									</div>
-								</CardContent>
-							</Card>
-						</motion.div>
+					<div className="flex justify-center">
+						<Card className="max-w-4xl text-left">
+							<CardContent>
+								<h3 className="text-2xl font-bold text-blue-900 leading-tight pb-2">Professional Summary</h3>
+								<p className="text-lg mb-2">
+									Versatile Software Engineer with nearly 2 years of progressive experience as an intern, trainee, and
+									associate. Specialized in mobile and full-stack application development, delivering reliable software
+									solutions that exceed user expectations. Proficient in JavaScript, TypeScript, Java, Python, and various
+									technologies including ReactJS & NextJS, NodeJS & ExpressJS, Flutter, and Android development.
+									Experienced in applying agile methodologies and DevOps practices. Proven ability to troubleshoot and
+									resolve software defects, ensuring smooth operations. Committed to continuous learning and staying
+									updated on best practices in software development. Seeking opportunities to leverage technical expertise
+									and innovative problem-solving abilities in collaborative environments.
+								</p>
+								<div className="flex flex-wrap gap-2 mt-2">
+									<span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
+										2+ Years Experience
+									</span>
+									<span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">
+										Full-Stack & Mobile
+									</span>
+									<span className="px-3 py-1 bg-purple-100 rounded-full text-xs font-medium">Agile & DevOps</span>
+									<span className="px-3 py-1 bg-yellow-100 rounded-full text-xs font-medium">Continuous Learner</span>
+								</div>
+							</CardContent>
+						</Card>
 					</div>
-					<p className="text-xl max-w-3xl mx-auto">
-						Passionate software engineer with expertise in modern web technologies and a drive for creating exceptional user
-						experiences.
-					</p>
 				</motion.div>
 			</div>
 		</AnimatedSection>

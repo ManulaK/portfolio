@@ -29,7 +29,7 @@ export function Footer() {
 						</div>
 						<p className="text-gray-400 mb-6 max-w-md">
 							Software engineer passionate about creating exceptional digital experiences and innovative solutions that make a
-							real impact.
+							real impact. Specialized in full-stack and mobile development.
 						</p>
 						<div className="flex gap-4">
 							<a

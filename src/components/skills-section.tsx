@@ -54,7 +54,6 @@ const skillGroups: SkillGroup[] = [
 			{ name: 'Dart', icon: SiDart },
 			{ name: 'Swift', icon: SiSwift },
 			{ name: 'C#', icon: SiDotnet },
-			{ name: 'SQL', icon: SiMysql },
 		],
 	},
 	{
@@ -69,12 +68,10 @@ const skillGroups: SkillGroup[] = [
 			{ name: 'Express.js', icon: SiExpress },
 			{ name: '.NET', icon: SiDotnet },
 			{ name: 'Flask', icon: SiFlask },
-			{ name: 'Strapi', icon: FaCogs },
 			{ name: 'GraphQL', icon: SiGraphql },
 			{ name: 'RESTful APIs', icon: FaProjectDiagram },
 			{ name: 'WebSockets', icon: SiSocketdotio },
 			{ name: 'LangChain', icon: FaRobot },
-			{ name: 'Prisma', icon: FaDatabase },
 		],
 	},
 	{
@@ -89,13 +86,14 @@ const skillGroups: SkillGroup[] = [
 		],
 	},
 	{
-		title: 'Databases',
+		title: 'Databases & ORMs',
 		icon: FaDatabase,
 		skills: [
 			{ name: 'MongoDB', icon: SiMongodb },
 			{ name: 'PostgreSQL', icon: SiPostgresql },
 			{ name: 'MySQL', icon: SiMysql },
 			{ name: 'Firebase', icon: SiFirebase },
+			{ name: 'Prisma', icon: FaDatabase },
 		],
 	},
 	{
@@ -105,7 +103,7 @@ const skillGroups: SkillGroup[] = [
 			{ name: 'Git', icon: SiGit },
 			{ name: 'GitHub', icon: SiGithub },
 			{ name: 'CI/CD Pipelines', icon: FaCogs },
-			// Add Docker, AWS, GCP, Azure if you want
+			{ name: 'Docker', icon: FaCogs },
 		],
 	},
 	{

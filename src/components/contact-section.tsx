@@ -36,90 +36,93 @@ export function ContactSection() {
 					</p>
 				</motion.div>
 
-				<div className="grid lg:grid-cols-2 gap-12">
+				<div className="grid lg:grid-cols-2 gap-12 items-start">
 					{/* Contact Information */}
 					<motion.div
 						initial={{ opacity: 0, x: -50 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.8 }}
 						viewport={{ once: true }}
-						className="space-y-8"
-						whileHover={{ scale: 1.02, rotate: -1 }}
+						className="h-full"
 					>
-						<div>
-							<h3 className="text-2xl font-bold text-gray-900 mb-6">Let&apos;s Connect</h3>
-							<p className="text-lg text-gray-600 leading-relaxed mb-8">
-								Whether you have a project in mind, want to discuss potential opportunities, or just want to say hello,
-								I&apos;d love to hear from you. Feel free to reach out through any of the channels below.
-							</p>
-						</div>
-
-						<div className="space-y-6">
-							<div className="flex items-center gap-4">
-								<div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-									<Mail className="w-6 h-6 text-white" />
-								</div>
+						<Card className="p-8 h-full">
+							<CardContent className="p-0">
 								<div>
-									<h4 className="font-semibold text-gray-900">Email</h4>
-									<p className="text-gray-600">manulakavinda.dev@gmail.com</p>
+									<h3 className="text-2xl font-bold text-gray-900 mb-6">Let&apos;s Connect</h3>
+									<p className="text-lg text-gray-600 leading-relaxed mb-8">
+										Whether you have a project in mind, want to discuss potential opportunities, or just want to say
+										hello, I&apos;d love to hear from you. Feel free to reach out through any of the channels below.
+									</p>
 								</div>
-							</div>
 
-							<div className="flex items-center gap-4">
-								<div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-									<Phone className="w-6 h-6 text-white" />
+								<div className="space-y-6">
+									<div className="flex items-center gap-4">
+										<div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+											<Mail className="w-6 h-6 text-white" />
+										</div>
+										<div>
+											<h4 className="font-semibold text-gray-900">Email</h4>
+											<p className="text-gray-600">manulakavinda.dev@gmail.com</p>
+										</div>
+									</div>
+
+									<div className="flex items-center gap-4">
+										<div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+											<Phone className="w-6 h-6 text-white" />
+										</div>
+										<div>
+											<h4 className="font-semibold text-gray-900">Phone</h4>
+											<p className="text-gray-600">+94-71-999-1761</p>
+										</div>
+									</div>
+
+									<div className="flex items-center gap-4">
+										<div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+											<MapPin className="w-6 h-6 text-white" />
+										</div>
+										<div>
+											<h4 className="font-semibold text-gray-900">Location</h4>
+											<p className="text-gray-600">Minuwangoda, Western Province, Sri Lanka</p>
+										</div>
+									</div>
 								</div>
+
+								{/* Social Links */}
 								<div>
-									<h4 className="font-semibold text-gray-900">Phone</h4>
-									<p className="text-gray-600">+94-71-999-1761</p>
+									<h4 className="font-semibold text-gray-900 my-4">Follow Me</h4>
+									<div className="flex gap-4">
+										{[
+											{
+												href: 'https://github.com/ManulaK',
+												icon: <LuGithub className="w-6 h-6 text-gray-700" />,
+											},
+											{
+												href: 'https://www.linkedin.com/in/manulakavinda/',
+												icon: <LuLinkedin className="w-6 h-6 text-blue-700" />,
+											},
+											{
+												href: 'https://www.instagram.com/manuu.k_____/',
+												icon: <LuInstagram className="w-6 h-6 text-pink-600" />,
+											},
+										].map((item, i) => (
+											<motion.a
+												key={item.href}
+												href={item.href}
+												target="_blank"
+												rel="noopener noreferrer"
+												initial={{ opacity: 0, scale: 0.7 }}
+												animate={{ opacity: 1, scale: 1 }}
+												transition={{ delay: 0.5 + i * 0.15, duration: 0.5, type: 'spring' }}
+												whileHover={{ scale: 1.2, rotate: 6 }}
+												className="p-3 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 hover:bg-white transition-all duration-300 hover:scale-110 shadow-md"
+											>
+												{item.icon}
+											</motion.a>
+										))}
+									</div>
 								</div>
-							</div>
-
-							<div className="flex items-center gap-4">
-								<div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-									<MapPin className="w-6 h-6 text-white" />
-								</div>
-								<div>
-									<h4 className="font-semibold text-gray-900">Location</h4>
-									<p className="text-gray-600">Minuwangoda, Western Province, Sri Lanka</p>
-								</div>
-							</div>
-						</div>
-
-						{/* Social Links */}
-						<div>
-							<h4 className="font-semibold text-gray-900 mb-4">Follow Me</h4>
-							<div className="flex gap-4">
-								{[
-									{
-										href: 'https://github.com/ManulaK',
-										icon: <LuGithub className="w-6 h-6 text-gray-700" />,
-									},
-									{
-										href: 'https://www.linkedin.com/in/manulakavinda/',
-										icon: <LuLinkedin className="w-6 h-6 text-blue-700" />,
-									},
-									{
-										href: 'https://www.instagram.com/manuu.k_____/',
-										icon: <LuInstagram className="w-6 h-6 text-pink-600" />,
-									},
-								].map((item, i) => (
-									<motion.a
-										key={item.href}
-										href={item.href}
-										target="_blank"
-										rel="noopener noreferrer"
-										initial={{ opacity: 0, scale: 0.7 }}
-										animate={{ opacity: 1, scale: 1 }}
-										transition={{ delay: 0.5 + i * 0.15, duration: 0.5, type: 'spring' }}
-										whileHover={{ scale: 1.2, rotate: 6 }}
-										className="p-3 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 hover:bg-white transition-all duration-300 hover:scale-110 shadow-md"
-									>
-										{item.icon}
-									</motion.a>
-								))}
-							</div>
-						</div>
+							</CardContent>
+						</Card>
 					</motion.div>
 
 					{/* Contact Form */}
@@ -128,10 +131,14 @@ export function ContactSection() {
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.8 }}
 						viewport={{ once: true }}
+						className="h-full"
 					>
-						<Card className="p-8">
+						<Card className="p-8 h-full">
 							<CardContent className="p-0">
 								<h3 className="text-2xl font-bold text-gray-900 mb-6">Send a Message</h3>
+								<p className="text-gray-600 mb-6">
+									I'm always interested in new opportunities and exciting projects. Feel free to reach out!
+								</p>
 
 								<form
 									action="https://formspree.io/f/xkgbvdap"
@@ -217,10 +224,14 @@ export function ContactSection() {
 										Send Message
 									</Button>
 									{status === 'success' && (
-										<p className="text-green-600 mt-4 text-center">Thank you! Your message has been sent.</p>
+										<p className="text-green-600 mt-4 text-center font-medium">
+											Thank you! Your message has been sent successfully. I'll get back to you soon.
+										</p>
 									)}
 									{status === 'error' && (
-										<p className="text-red-600 mt-4 text-center">Oops! Something went wrong. Please try again.</p>
+										<p className="text-red-600 mt-4 text-center font-medium">
+											Sorry! Something went wrong. Please try again or contact me directly via email.
+										</p>
 									)}
 								</form>
 							</CardContent>

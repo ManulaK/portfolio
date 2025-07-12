@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
-import { GraduationCap, MapPin, Calendar } from 'lucide-react';
+import { GraduationCap, MapPin, Calendar, ExternalLink } from 'lucide-react';
 import { AnimatedSection } from '@/components/ui/animated-section';
 import { AnimatedBlobsBackground } from './ui/animated-blobs-background';
 
@@ -12,7 +12,8 @@ const education = [
 		institution: 'Sri Lanka Institute of Information Technology',
 		location: 'Malabe, Sri Lanka',
 		year: '2025',
-		extra: 'Classification: Second Division Class',
+		extra: 'Classification: Second Class Division',
+		link: 'https://www.sliit.lk/computing/programmes/software-engineering-degree/',
 		description:
 			'Comprehensive four-year program focused on advanced software engineering principles, project-based learning, and real-world application development. Developed strong skills in full-stack development, agile methodologies, and team collaboration.',
 		research: [
@@ -40,6 +41,7 @@ const education = [
 		institution: 'ESOFT Metro Campus',
 		location: 'Colombo, Sri Lanka',
 		year: '2020',
+		link: 'https://esoft.lk/',
 		description:
 			'Intensive diploma covering IT fundamentals, web development, and e-commerce solutions. Gained practical experience in building and managing online business platforms.',
 	},
@@ -48,6 +50,7 @@ const education = [
 		institution: 'ESOFT Metro Campus',
 		location: 'Colombo, Sri Lanka',
 		year: '2020',
+		link: 'https://esoft.lk/',
 		description:
 			'Focused on enhancing English language proficiency for academic and professional communication, including writing, speaking, and comprehension skills.',
 	},
@@ -57,6 +60,7 @@ const education = [
 		location: 'Minuwangoda, Sri Lanka',
 		year: '2019',
 		extra: 'Stream: Engineering Technology; Medium: Sinhala',
+		link: 'https://en.wikipedia.org/wiki/GCE_Advanced_Level_in_Sri_Lanka',
 		description:
 			'Specialized in Engineering Technology, developing a strong foundation in mathematics, physics, and applied sciences. Completed studies in Sinhala medium.',
 	},
@@ -66,6 +70,7 @@ const education = [
 		location: 'Negombo, Sri Lanka',
 		year: '2016',
 		extra: 'Medium: English',
+		link: 'https://en.wikipedia.org/wiki/GCE_Ordinary_Level_in_Sri_Lanka',
 		description:
 			'Completed secondary education with a focus on core subjects, laying the groundwork for further studies in technology and engineering.',
 	},
@@ -131,9 +136,21 @@ export function EducationSection() {
 									<div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between mb-2">
 										<div>
 											<h3 className="text-xl font-bold leading-tight">{edu.degree}</h3>
-											<span className="block text-sm font-medium text-blue-700 opacity-80 mt-1 sm:mt-0">
-												{edu.institution}
-											</span>
+											{edu.link ? (
+												<a
+													href={edu.link}
+													target="_blank"
+													rel="noopener noreferrer"
+													className="block text-sm font-medium text-blue-700 opacity-80 mt-1 sm:mt-0 hover:text-blue-900 hover:opacity-100 transition-colors duration-200 underline decoration-dotted underline-offset-2 flex items-center gap-1"
+												>
+													{edu.institution}
+													<ExternalLink className="w-3 h-3" />
+												</a>
+											) : (
+												<span className="block text-sm font-medium text-blue-700 opacity-80 mt-1 sm:mt-0">
+													{edu.institution}
+												</span>
+											)}
 										</div>
 										<div className="flex items-center gap-2 text-gray-500 text-xs sm:text-sm mt-2 sm:mt-0">
 											<Calendar className="w-4 h-4" />

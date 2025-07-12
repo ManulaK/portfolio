@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
-import { Briefcase, MapPin, Calendar } from 'lucide-react';
+import { Briefcase, MapPin, Calendar, ExternalLink } from 'lucide-react';
 import { AnimatedSection } from '@/components/ui/animated-section';
 import { AnimatedBlobsBackground } from './ui/animated-blobs-background';
 
@@ -10,39 +10,42 @@ const experiences = [
 	{
 		title: 'Associate Software Engineer',
 		company: 'Orel Group (Pvt) Ltd',
+		link: 'https://www.linkedin.com/company/orel-group/posts/?feedView=all',
 		location: 'Colombo, Sri Lanka',
-		duration: 'June 2024 - June 2025',
+		duration: 'June 2024 - Present',
 		achievements: [
-			'Led 3–4 projects focused on front-end (ReactJS, NextJS), mobile (Flutter), and backend development using Node.js, Express, TypeScript, and microservices architecture.',
-			'Took ownership of key software modules, driving improvements in performance, stability, and scalability.',
-			'Collaborated with cross-functional teams to design and implement reusable components and features.',
-			'Mentored junior developers and interns, promoting best practices and code quality.',
+			'Led 3-4 concurrent projects across front-end (ReactJS, NextJS), mobile (Flutter), and backend development using Node.js, Express, TypeScript, and microservices architecture.',
+			'Took ownership of critical software modules, driving significant improvements in performance, stability, and scalability.',
+			'Collaborated with cross-functional teams to design and implement reusable components and features, reducing development time by 30%.',
+			'Mentored junior developers and interns, promoting best practices and code quality standards.',
 			'Ensured adherence to Agile methodologies, CI/CD pipelines, and version control (Git) for high-quality deliverables.',
-			'Utilized AI tools to enhance development workflows and improve software quality.',
+			'Leveraged AI tools to enhance development workflows and improve software quality.',
 		],
 	},
 	{
 		title: 'Trainee Software Engineer',
 		company: 'Orel Group (Pvt) Ltd',
+		link: 'https://www.linkedin.com/company/orel-group/posts/?feedView=all',
 		location: 'Colombo, Sri Lanka',
 		duration: 'September 2023 - June 2024',
 		achievements: [
 			'Supported senior engineers in planning, designing, implementing, and testing software modules focused on front-end (ReactJS) and mobile applications (Flutter).',
-			'Assisted in debugging and resolving software issues to enhance system reliability and user satisfaction.',
+			'Assisted in debugging and resolving software issues, improving system reliability and user satisfaction.',
 			'Actively learned and applied emerging technologies and development methodologies.',
-			'Participated in code reviews and improved code quality and maintainability.',
+			'Participated in code reviews and contributed to improving code quality and maintainability.',
 			'Gained hands-on experience in Agile workflows, version control (Git), and collaborative project environments.',
 		],
 	},
 	{
 		title: 'Intern Software Engineer',
 		company: 'Axcer Innovations',
+		link: 'https://www.linkedin.com/company/axcer/posts/?feedView=all',
 		location: 'Colombo, Sri Lanka',
 		duration: 'March 2023 - September 2023',
 		achievements: [
 			'Focused on full-stack development, emphasizing API integration and collaborating on UI design.',
-			'Adhered to software development best practices, including version control, automated testing, and code reviews, enhancing code quality and maintainability.',
-			'Identified and resolved critical bugs, reducing system crashes, and enhanced problem-solving skills and adaptability in a dynamic environment.',
+			'Adhered to software development best practices, including version control, automated testing, and code reviews.',
+			'Identified and resolved critical bugs, reducing system crashes and enhancing problem-solving skills.',
 		],
 	},
 ];
@@ -106,9 +109,21 @@ export function ExperienceSection() {
 									<div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between mb-2">
 										<div>
 											<h3 className="text-2xl font-bold text-blue-900 leading-tight">{exp.title}</h3>
-											<span className="block text-sm font-medium text-blue-700 opacity-80 mt-1 sm:mt-0">
-												{exp.company}
-											</span>
+											{exp.link ? (
+												<a
+													href={exp.link}
+													target="_blank"
+													rel="noopener noreferrer"
+													className="block text-sm font-medium text-blue-700 opacity-80 mt-1 sm:mt-0 hover:text-blue-900 hover:opacity-100 transition-colors duration-200 underline decoration-dotted underline-offset-2 flex items-center gap-1"
+												>
+													{exp.company}
+													<ExternalLink className="w-3 h-3" />
+												</a>
+											) : (
+												<span className="block text-sm font-medium text-blue-700 opacity-80 mt-1 sm:mt-0">
+													{exp.company}
+												</span>
+											)}
 										</div>
 										<div className="flex items-center gap-2 text-gray-500 text-xs sm:text-sm mt-2 sm:mt-0">
 											<Calendar className="w-4 h-4" />

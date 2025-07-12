@@ -58,7 +58,16 @@ export function Navigation() {
 									{item.name}
 								</a>
 							))}
-							<Button variant="gradient" size="sm">
+							<Button
+								variant="gradient"
+								size="sm"
+								onClick={() => {
+									const contactSection = document.getElementById('contact');
+									if (contactSection) {
+										contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+									}
+								}}
+							>
 								Get In Touch
 							</Button>
 						</div>
@@ -105,7 +114,16 @@ export function Navigation() {
 									{item.name}
 								</motion.a>
 							))}
-							<Button variant="gradient" size="sm">
+							<Button
+								variant="gradient"
+								size="sm"
+								onClick={() => {
+									const contactSection = document.getElementById('contact');
+									if (contactSection) {
+										contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+									}
+								}}
+							>
 								Get In Touch
 							</Button>
 						</div>
@@ -143,7 +161,17 @@ export function Navigation() {
 								</motion.a>
 							))}
 							<div className="pt-4">
-								<Button variant="gradient" className="w-full">
+								<Button
+									variant="gradient"
+									className="w-full"
+									onClick={() => {
+										const contactSection = document.getElementById('contact');
+										if (contactSection) {
+											contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+										}
+										setIsOpen(false);
+									}}
+								>
 									Get In Touch
 								</Button>
 							</div>
