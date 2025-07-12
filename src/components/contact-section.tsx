@@ -137,7 +137,7 @@ export function ContactSection() {
 							<CardContent className="p-0">
 								<h3 className="text-2xl font-bold text-gray-900 mb-6">Send a Message</h3>
 								<p className="text-gray-600 mb-6">
-									I'm always interested in new opportunities and exciting projects. Feel free to reach out!
+									I&apos;m always interested in new opportunities and exciting projects. Feel free to reach out!
 								</p>
 
 								<form
@@ -225,7 +225,7 @@ export function ContactSection() {
 									</Button>
 									{status === 'success' && (
 										<p className="text-green-600 mt-4 text-center font-medium">
-											Thank you! Your message has been sent successfully. I'll get back to you soon.
+											Thank you! Your message has been sent successfully. I&apos;ll get back to you soon.
 										</p>
 									)}
 									{status === 'error' && (

@@ -7,7 +7,20 @@ import { AnimatedSection } from '@/components/ui/animated-section';
 import { AnimatedBlobsBackground } from './ui/animated-blobs-background';
 import React from 'react'; // Added missing import for React
 
-const projects = [
+interface Project {
+	title: string;
+	organization: string;
+	url?: string;
+	date: string;
+	description: string;
+	technologies: string[];
+	images: string[] | null;
+	links?: { name: string; url: string }[];
+	type: string;
+	highlights?: string[];
+}
+
+const projects: Project[] = [
 	{
 		title: "i'Orel Enterprise Application Software",
 		organization: 'Orel Corporation Sri Lanka',
@@ -391,7 +404,7 @@ const ProjectImageGallery = ({ images }: { images: string[] }) => {
 };
 
 // Project Card Component with Height Management and Hover Animations
-const ProjectCard = ({ project, idx }: { project: any; idx: number }) => {
+const ProjectCard = ({ project }: { project: Project }) => {
 	const [isExpanded, setIsExpanded] = React.useState(false);
 	const [showExpandButton, setShowExpandButton] = React.useState(false);
 	const [isDescriptionExpanded, setIsDescriptionExpanded] = React.useState(false);
@@ -558,7 +571,7 @@ const ProjectCard = ({ project, idx }: { project: any; idx: number }) => {
 								}}
 								transition={{ duration: 0.3, ease: 'easeOut' }}
 							>
-								{project.links.map((link: any, idx: number) => (
+								{project.links.map((link: { name: string; url: string }, idx: number) => (
 									<motion.a
 										key={idx}
 										href={link.url}
@@ -714,9 +727,9 @@ export function ProjectsSection() {
 
 				{/* Grid layout in index order */}
 				<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10 xl:gap-12">
-					{projects.map((project, idx) => (
+					{projects.map((project) => (
 						<div key={project.title} className="p-2">
-							<ProjectCard project={project} idx={idx} />
+							<ProjectCard project={project} />
 						</div>
 					))}
 				</div>
